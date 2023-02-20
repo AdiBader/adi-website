@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function AdiImage({ stoppedWalking = true, walkingDirection, goDown }) {
 	const [adiPic, setAdiPic] = useState('');

@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import PortfolioContext from '../../../Context/PortfolioContext';
 import './level1.css';
 import SunComponent from './sun/SunComponent';
