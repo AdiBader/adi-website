@@ -1,0 +1,212 @@
+.adiParatrooper {
+	position: absolute;
+	left: 35vw;
+	top: 240vh;
+	height: auto;
+	width: 50vw;
+	transform: rotateY(180deg);
+}
+.adiParatrooper {
+	display: block;
+	z-index: 9999;
+	/* min-height: 500px; */
+	animation: adiDrivePilotParatrooper 1.2s ease-out;
+}
+.adiParatrooper .pilot {
+	position: relative;
+	animation: beforePilotLeaveParatrooper 1.4s ease-in;
+	top: 0;
+	width: 45%;
+}
+.adiParatrooper .pilotDiv {
+	width: 100%;
+	position: relative;
+}
+.adiParatrooper .propelor {
+	left: -6px;
+	width: 92px;
+	top: 23px;
+	animation: propelor 0.8s linear infinite;
+	position: absolute;
+	z-index: 100;
+}
+
+.adiParatrooper .pilot .pilotImg {
+	width: 240px;
+	left: 0;
+	z-index: 99;
+	position: absolute;
+	top: -56px;
+	transform: rotateY(180deg);
+	animation: planeAnimation 1s ease-in-out infinite;
+	display: inline-block;
+}
+.paratrooperClicked .pilot .pilotImg.pilotDriverImg {
+	display: none;
+}
+
+.adiParatrooper .pilot .pilotImg.pilotDriverImg {
+	background-image: url(../../../../bgImages/adiDrivePilot.png);
+	height: 122px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	animation: pilotFront 3.5s none infinite;
+	left: -17%;
+	top: -67px;
+}
+.adiParatrooper .rope {
+	width: calc(100% - 240px);
+	background-color: white;
+	height: 4px;
+	right: 24px;
+	position: absolute;
+	top: 65px;
+	border-radius: 26px;
+	color: white;
+}
+.adiParatrooper .rope::after {
+	content: '<';
+	position: absolute;
+	right: -25px;
+	line-height: 1em;
+	font-size: 54px;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	top: -18px;
+	font-family: arial;
+}
+.adiParatrooper .title.pilotTitle {
+	position: absolute;
+
+	top: 0;
+	color: white;
+	width: 55%;
+	height: auto;
+	right: 0;
+	margin: 0;
+	outline: 6px solid white;
+	transform: rotateY(180deg);
+	cursor: pointer;
+	animation: titleAnimation 1.2s ease-in-out 1.5s infinite;
+}
+
+.adiParatrooper .pilotTitle h2 {
+	padding: 14px 0 20px;
+	font-size: 72px;
+	margin: 0;
+	text-align: center;
+	font-weight: 900;
+}
+
+@keyframes adiDrivePilotParatrooper {
+	0% {
+		left: -30vw;
+	}
+
+	100% {
+		left: 35vw;
+	}
+}
+
+@keyframes titleAnimation {
+	0% {
+		transform: rotateY(180deg) skewX(2deg);
+		outline-color: white;
+	}
+	25% {
+		transform: rotateY(180deg) skewX(-1deg);
+	}
+	35% {
+		transform: rotateY(180deg) skewY(1deg);
+	}
+	50% {
+		outline-color: white;
+	}
+	51% {
+		transform: rotateY(180deg) skewX(0);
+
+		outline-color: rgb(250, 250, 134);
+		box-shadow: 0px 0px 16px 8px rgb(255 255 155 / 60%);
+	}
+	100% {
+		transform: rotateY(180deg) skewX(0);
+
+		outline-color: rgb(250, 250, 134);
+		box-shadow: 0px 0px 13px 6px rgb(255 255 125 / 60%);
+	}
+}
+
+@keyframes pilotFront {
+	0% {
+		background-image: url(../../../../bgImages/adiDrivePilot.png);
+	}
+	50% {
+		background-image: url(../../../../bgImages/adiDrivePilot.png);
+	}
+	50.1% {
+		background-image: url(../../../../bgImages/adiDrivePilotFront.png);
+	}
+	100% {
+		background-image: url(../../../../bgImages/adiDrivePilotFront.png);
+	}
+}
+
+@keyframes propelor {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes pilotLeaveParatrooper {
+	0% {
+		width: 45%;
+		left: 0;
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+		width: 72.5vw;
+		left: -50vw;
+	}
+	100% {
+		width: 72.5vw;
+		left: -50vw;
+		opacity: 0;
+	}
+}
+@keyframes beforePilotLeaveParatrooper {
+	0% {
+		left: 0;
+		opacity: 1;
+	}
+	100% {
+		left: 0;
+		opacity: 1;
+	}
+}
+@keyframes planeAnimation {
+	0% {
+		transform: rotateY(180deg) skewX(0);
+	}
+	25% {
+		transform: rotateY(180deg) skewX(1deg);
+	}
+	50% {
+		transform: rotateY(180deg) skewY(-1deg);
+	}
+	75% {
+		transform: rotateY(180deg) skewX(1deg);
+	}
+	100% {
+		transform: rotateY(180deg) skewX(0);
+	}
+}

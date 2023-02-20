@@ -1,0 +1,162 @@
+.contactFormComponent form {
+	padding: 0 20px;
+	width: 30%;
+	margin: 50px auto;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	gap: 30px;
+}
+.contactFormComponent .inputDiv {
+	display: flex;
+	flex-direction: column;
+}
+.contactFormComponent .inputDiv.message textarea {
+	height: 200px;
+	font-family: 'Open Sans', sans-serif;
+	font-family: 'Roboto', sans-serif;
+}
+.contactFormComponent input,
+.contactFormComponent textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	padding: 10px;
+	border: none;
+	background-color: #ccf2ff;
+	outline-color: #61c0f4;
+	font-size: 16px;
+}
+
+.contactFormComponent label {
+	font-size: 0;
+	color: transparent;
+}
+.contactFormComponent {
+	margin-top: 180px;
+}
+.contactFormComponent button {
+	background-color: #e55943;
+	border: none;
+	padding: 15px;
+	font-size: 19px;
+	color: #fff;
+	width: 150px;
+	align-self: end;
+	position: relative;
+}
+
+.footer {
+	position: absolute;
+	height: 180px;
+	width: 100%;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	color: #fff;
+}
+.detailsContainer {
+	width: 80%;
+	display: flex;
+	margin: 0 auto;
+	gap: 20px;
+}
+
+.footer .bottomFooter .detailsContainer {
+	justify-content: space-between;
+	align-items: center;
+}
+.footer .topFooter .detailsContainer {
+	align-items: center;
+	justify-content: center;
+}
+.footer .bottomFooter {
+	background-color: #73bd96;
+	height: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+.footer .topFooter {
+	background-color: #61c0f4;
+	height: 50%;
+	display: flex;
+}
+.scrollDiv9 .adiContainerDiv {
+	z-index: 1;
+}
+.scrollDiv9 .adiContainerDiv .habDiv {
+	bottom: 24vh;
+	width: 18vw;
+	left: 72vw;
+	transition: 1.5s ease;
+}
+.contactTextDiv {
+	position: absolute;
+	left: 0;
+	width: 28vw;
+	top: 0;
+	color: white;
+}
+.contactTextDiv h1 {
+	font-size: 40px;
+	margin: 0 0 30px;
+	line-height: 1em;
+	padding-right: 10%;
+}
+.contactTextDiv p {
+	font-size: 24px;
+	padding-right: 10%;
+}
+.contactContainer {
+	width: 80%;
+	margin: 0 auto;
+	position: relative;
+}
+.socialIcon.linkedInIcon {
+	width: 40px;
+	aspect-ratio: 1;
+	font-size: 28px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #61c0f4;
+	background-color: white;
+	border-radius: 50%;
+}
+.socialIcon {
+	vertical-align: top;
+	display: flex;
+	font-size: 40px;
+	color: #fff;
+}
+.detailsContainer a.details {
+	color: white;
+	text-decoration: none;
+}
+button {
+	cursor: pointer;
+}
+
+.scrollDiv9 img.cloudRight {
+	right: -100vw;
+	transition: 2s all ease-in-out;
+}
+
+.scrollDiv9 img.cloudLeft {
+	left: -100vw;
+	transition: 2s all ease-in-out;
+}
+.level9Div {
+	animation: fadeAnimation 1s ease;
+}
+.fwDiv {
+	animation: fadeAnimation 2.2s ease 3s reverse;
+}
+
+@keyframes fadeAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

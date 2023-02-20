@@ -1,0 +1,72 @@
+.educationDiv {
+	position: absolute;
+	bottom: 100vh;
+	width: 40vw;
+	left: 15vw;
+}
+.educationDivIn {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 10vh;
+}
+.eduBlock {
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 5%;
+	text-align: center;
+	color: #888;
+	position: relative;
+}
+.eduYears {
+	font-size: 38px;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #888;
+	margin-bottom: 10px;
+}
+img.schoolLogo {
+	width: 18%;
+	margin-bottom: 8px;
+}
+.eduTitle {
+	font-size: 25px;
+	font-weight: bold;
+	color: #c76c6c;
+}
+.eduSchool {
+	font-size: 24px;
+	margin-bottom: 30px;
+	font-weight: 300;
+	color: #c76c6c;
+}
+.eduText {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+.eduBlockIn {
+	outline: 4px solid #6ad8fe;
+	padding: 4%;
+	background-color: rgba(255, 255, 255, 0.4);
+	box-shadow: 0 0 8px 4px rgb(0 0 0 / 40%);
+}
+
+.birdDiv {
+	position: absolute;
+	width: 60px;
+	aspect-ratio: 1;
+	background-image: url('./../../../../bgImages/bird.png');
+	right: -48px;
+	top: -45px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	rotate: -17deg;
+	animation: flyingBird 0.4s ease infinite;
+}
+.birdDiv2 {
+	rotate: 17deg;
+	transform: rotateY(180deg);
+	left: -48px;
+}

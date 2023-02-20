@@ -1,0 +1,126 @@
+.tractorDiv {
+	width: 350px;
+	bottom: 26px;
+	position: fixed;
+	left: calc(50% - 175px);
+}
+.tractorDiv.not3 {
+	position: absolute;
+	left: 50vw;
+	z-index: 9;
+	bottom: calc(165px - 26px);
+}
+.tractorDiv::after {
+	content: '';
+	position: absolute;
+	bottom: -6px;
+	left: 0;
+	width: 100%;
+	border-radius: 50%;
+	height: 8%;
+	background-color: #000;
+	z-index: -1;
+	filter: blur(4px);
+	opacity: 0.6;
+}
+.tractor {
+	width: 100%;
+}
+.tractorDiv .tWheel {
+	width: 43%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.tractorDiv .driving .tWheel {
+	animation: tractorWheel 0.2s linear infinite;
+}
+.tractorDiv .driving {
+	transform: skewX(-5deg);
+}
+.inTractorDiv {
+	transition: 0.3s ease;
+}
+.tractorDiv .driving.backword {
+	transform: rotateY(180deg) skewX(-5deg);
+}
+.tractorDiv .tWheel.small {
+	width: 34%;
+	position: absolute;
+	left: unset;
+	bottom: 0;
+	right: 2%;
+}
+.tractorDiv .adiDriveT {
+	background-image: url(../../../../bgImages/adiDriveTside.png);
+	width: 21%;
+	height: 42%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	animation: tractorFront 3.5s none infinite;
+	position: absolute;
+	top: 9%;
+	left: 27%;
+}
+.level2 .tractorDiv {
+	position: absolute;
+	left: unset;
+	right: -70vw;
+	bottom: -26px;
+	z-index: 9;
+}
+.tractorLevel4 {
+	left: 5%;
+	transition: 1s linear;
+}
+.tractorLevel5 {
+	transition: 1s linear;
+}
+.inTractorDiv {
+	transition: none;
+}
+.tractorIndex0 {
+	left: 5%;
+}
+.tractorIndex1 {
+	left: 40%;
+}
+.tractorIndex2 {
+	left: calc(95% - 350px);
+}
+.tractorDiv .driving .tWheel {
+	animation: tractorWheel 0.2s linear infinite;
+}
+.moveToIndex .tWheel {
+	animation: tractorWheel 0.2s linear infinite;
+}
+.tractorLevel5 .tWheel {
+	animation: tractorWheel 0.2s linear 5;
+}
+.tractorDiv.moveToIndex .inTractorDiv {
+	transform: skewX(-5deg);
+}
+
+@keyframes tractorFront {
+	0% {
+		background-image: url(../../../../bgImages/adiDriveTside.png);
+	}
+	50% {
+		background-image: url(../../../../bgImages/adiDriveTside.png);
+	}
+	50.1% {
+		background-image: url(../../../../bgImages/adiDriveTfront.png);
+	}
+	100% {
+		background-image: url(../../../../bgImages/adiDriveTfront.png);
+	}
+}
+
+@keyframes tractorWheel {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}

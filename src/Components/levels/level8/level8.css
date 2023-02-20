@@ -1,0 +1,87 @@
+img.hab {
+	width: 100%;
+}
+.habDiv {
+	position: absolute;
+	bottom: 115px;
+	width: 27.5vw;
+	left: 30vw;
+}
+
+.habDiv::before {
+	content: '';
+	width: 26%;
+	position: absolute;
+	left: 38%;
+	height: 2%;
+	background-color: black;
+	bottom: -3px;
+	z-index: -1;
+	filter: blur(4px);
+	opacity: 0.4;
+	border-radius: 50%;
+	animation: noShadow 1s linear;
+}
+.scrollDiv8 .laundryDiv {
+	left: 0;
+	position: absolute;
+	bottom: 90vh;
+	width: 100%;
+	height: 250px;
+	z-index: -1;
+}
+.scrollDiv8 .laundryDiv .laundry {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background-size: 50vw;
+	background-repeat: repeat-x;
+	width: 120vw;
+	height: 250px;
+	top: unset;
+	rotate: -8deg;
+	transform-origin: top left;
+	animation: laundryAnimation 3s ease-in-out infinite;
+}
+
+.scrollDiv8 .laundryDiv .laundry2 {
+	bottom: 124vh;
+	rotate: 8deg;
+
+	left: -5vw;
+}
+.scrollDiv8 .sectionTitle {
+	top: unset;
+	bottom: -32vh;
+	right: unset;
+	width: 100%;
+}
+@keyframes laundryAnimation {
+	0% {
+		transform: skew(-6deg) rotateX(6deg);
+	}
+	45% {
+		transform: skew(6deg) rotateX(-12deg);
+	}
+
+	100% {
+		transform: skew(-6deg) rotateX(6deg);
+	}
+}
+
+.level8 .habDiv {
+	animation: landHab 1s ease;
+}
+
+@keyframes landHab {
+	0% {
+		left: 60vw;
+		bottom: 20vh;
+		width: 25vw;
+	}
+	100% {
+		left: 30vw;
+		bottom: 115px;
+		width: 27.5vw;
+	}
+}

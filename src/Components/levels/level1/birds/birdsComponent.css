@@ -1,0 +1,72 @@
+.birds .bird {
+	height: 540px;
+	width: 50px;
+	background-position: top center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-image: url(../../../../bgImages/bird.png);
+	animation: animateBird 6.5s linear infinite, flyingBird 0.4s ease infinite;
+	position: absolute;
+	right: -100px;
+	top: 2vh;
+}
+.birds {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+}
+
+.bird1 {
+	animation-delay: 0s !important;
+}
+.bird2 {
+	animation-delay: 0.3s !important;
+}
+.bird3 {
+	animation-delay: 0.6s !important;
+}
+.bird4 {
+	animation-delay: 0.9s !important;
+}
+.bird5 {
+	animation-delay: 1.2s !important;
+}
+
+@keyframes animateBird {
+	0% {
+		transform: rotate(0deg);
+	}
+	16% {
+		right: calc(50vw - 25px);
+		transform: rotate(0deg);
+		top: calc(44vh - 80px);
+	}
+	82% {
+		transform: rotate(-390deg);
+		right: calc(50vw - 25px);
+		top: calc(44vh - 80px);
+	}
+	100% {
+		right: calc(100vw + 60px);
+		transform: rotate(-390deg);
+		top: 90vh;
+	}
+}
+
+@keyframes flyingBird {
+	0% {
+		background-image: url(../../../../bgImages/bird.png);
+	}
+
+	50% {
+		background-image: url(../../../../bgImages/bird.png);
+	}
+	51% {
+		background-image: url(../../../../bgImages/bird-fly.png);
+	}
+
+	100% {
+		background-image: url(../../../../bgImages/bird-fly.png);
+	}
+}

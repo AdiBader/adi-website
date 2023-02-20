@@ -1,0 +1,75 @@
+.each-slide-effect > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: cover;
+	height: 350px;
+}
+
+.each-slide-effect span {
+	padding: 20px;
+	font-size: 20px;
+	background: #efefef;
+	text-align: center;
+}
+.inSlide {
+	padding: 50px 40px 70px;
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+	margin: 0 auto;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+}
+.slideDiv {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.leftSlideDiv {
+	width: 30%;
+	align-items: end;
+}
+.rightSlideDiv {
+	width: 56%;
+}
+img.companyLogo {
+	width: 75%;
+	margin-top: 20px;
+}
+
+img.companyLogo1 {
+	width: 40%;
+}
+img.companyLogo2 {
+	width: 56%;
+}
+
+h2.CVyears {
+	font-size: 74px;
+	margin: 0;
+	font-weight: 900;
+	color: transparent;
+	-webkit-text-stroke-width: 2px;
+	-webkit-text-stroke-color: white;
+}
+h2.companyTitle {
+	margin: 0;
+	font-size: 44px;
+	margin-bottom: 20px;
+}
+ul.companyUl {
+	margin: 0;
+	padding: 0;
+	text-align: justify;
+}
+.companyUl li {
+	display: inline;
+	font-size: 18px;
+	line-height: 1.5em;
+}
+.companyUl li .starIcon {
+	font-size: 11px;
+	margin: 0 10px;
+	vertical-align: middle;
+}

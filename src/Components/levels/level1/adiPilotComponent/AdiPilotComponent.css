@@ -1,0 +1,177 @@
+.adiPilot {
+	position: relative;
+	rotate: 0deg;
+	left: 13vw;
+	top: 58vh;
+	height: auto;
+	width: 50vw;
+
+	display: none;
+}
+.anim .adiPilot {
+	display: block;
+	z-index: 9;
+
+	animation: adiDrivePilot 1.2s ease-out;
+}
+.adiPilot .pilot {
+	position: relative;
+	animation: beforePilotLeave 1.4s ease-in, pilotLeave 3.4s ease-in 1.4s;
+	opacity: 0;
+	width: 72.5vw;
+	left: -50vw;
+}
+.pilotDiv {
+	width: 100%;
+	position: relative;
+}
+.propelor {
+	left: -6px;
+	width: 92px;
+	top: 23px;
+	animation: propelor 0.8s linear infinite;
+	position: absolute;
+	z-index: 100;
+}
+
+.adiPilot .pilot .pilotImg {
+	width: 240px;
+	left: 0;
+	z-index: 99;
+	position: absolute;
+	top: -56px;
+	transform: rotateY(180deg);
+	display: inline-block;
+	animation: planeAnimation 1s ease-in-out infinite;
+}
+
+.adiPilot .pilot .pilotImg.pilotDriverImg {
+	background-image: url(../../../../bgImages/adiDrivePilot.png);
+	height: 122px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	left: 65px;
+	top: -66px;
+	animation: pilotFront1 2s ease 1.2s 1;
+	width: 100px;
+}
+.adiPilot .rope {
+	width: calc(100% - 240px);
+	background-color: #fdfaaa;
+	height: 4px;
+	right: 24px;
+	position: absolute;
+	top: 65px;
+	border-radius: 26px;
+}
+.adiPilot .rope::after {
+	content: '<';
+	position: absolute;
+	right: -25px;
+	line-height: 1em;
+	font-size: 54px;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	display: flex;
+	align-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	top: -18px;
+	font-family: arial;
+	color: #fdfaaa;
+}
+.adiPilot .title.pilotTitle {
+	position: absolute;
+	color: white;
+	top: 28%;
+	width: 55%;
+	height: auto;
+	right: 0;
+	margin: 0;
+	outline: 6px solid #fdfaaa;
+}
+
+.adiPilot .pilotTitle h2 {
+	padding: 14px 0 20px;
+	font-size: 72px;
+	margin: 0;
+	text-align: center;
+	font-weight: 900;
+}
+
+@keyframes adiDrivePilot {
+	0% {
+		left: 100vw;
+	}
+
+	100% {
+		left: 13.5vw;
+	}
+}
+@keyframes pilotFront1 {
+	0% {
+		background-image: url(../../../../bgImages/adiDrivePilotFront.png);
+	}
+
+	100% {
+		background-image: url(../../../../bgImages/adiDrivePilotFront.png);
+	}
+}
+
+@keyframes propelor {
+	0% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes pilotLeave {
+	0% {
+		width: 45%;
+		left: 0;
+		opacity: 1;
+	}
+	70% {
+		opacity: 1;
+		width: 72.5vw;
+		left: -50vw;
+	}
+	100% {
+		width: 72.5vw;
+		left: -50vw;
+		opacity: 0;
+	}
+}
+@keyframes beforePilotLeave {
+	0% {
+		width: 45%;
+		left: 0;
+		opacity: 1;
+	}
+	100% {
+		width: 45%;
+		left: 0;
+		opacity: 1;
+	}
+}
+@keyframes planeAnimation {
+	0% {
+		transform: rotateY(180deg) skewX(0);
+	}
+	25% {
+		transform: rotateY(180deg) skewX(1deg);
+	}
+	50% {
+		transform: rotateY(180deg) skewY(-1deg);
+	}
+	75% {
+		transform: rotateY(180deg) skewX(1deg);
+	}
+	100% {
+		transform: rotateY(180deg) skewX(0);
+	}
+}

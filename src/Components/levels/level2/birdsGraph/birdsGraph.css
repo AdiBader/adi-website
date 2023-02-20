@@ -1,0 +1,120 @@
+.birdsGraphWrap {
+	display: flex;
+	/* left: 130vw; */
+	align-items: baseline;
+	flex-wrap: wrap;
+	height: 50vh;
+	bottom: 110px;
+	position: absolute;
+	background-repeat-y: no-repeat;
+	width: 36vw;
+}
+
+.birdsGraph {
+	display: flex;
+	height: 100%;
+	position: absolute;
+	left: 25%;
+	top: -16.5%;
+
+	right: 0;
+	justify-content: space-between;
+	width: 75%;
+	display: none;
+}
+.birdsGraph.animatebirdsGraph {
+	animation: graphBirds 1.2s ease-in-out 1;
+	display: flex;
+}
+.birdsGraphCol {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 2%;
+	min-width: 21%;
+}
+.animatebirdsGraph .birdItem {
+	animation: flyingBird 0.4s ease 4, birdSmall 1s ease-in-out 1.6s infinite;
+}
+.birdItem {
+	background-image: url('../../../../bgImages/bird-fly.png');
+	rotate: 36deg;
+	height: 18%;
+	background-size: 54%;
+	aspect-ratio: 1;
+	background-repeat: no-repeat;
+	background-position: bottom center;
+}
+
+.birdsGraphWrap .tags .tag p {
+	width: 100%;
+	margin: 0 auto;
+
+	color: #6ad8fe;
+	font-weight: 600;
+	font-size: 15px;
+	min-height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+}
+
+.birdsGraphWrap .tags {
+	position: absolute;
+	right: 0;
+	display: flex;
+	top: -32%;
+	z-index: 9;
+	gap: 6%;
+	justify-content: space-between;
+	left: 25%;
+	width: 75%;
+}
+.birdsGraphWrap .tags .tag {
+	width: 20%;
+	text-align: center;
+	padding: 6px;
+	background-color: white;
+}
+
+@keyframes graphBirds {
+	0% {
+		left: 150%;
+		top: -40%;
+	}
+
+	100% {
+		left: 25%;
+		top: -17%;
+	}
+}
+@keyframes birdSmall {
+	0% {
+		transform: rotate(10deg);
+	}
+
+	50% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(10deg);
+	}
+}
+
+@keyframes flyingBird {
+	0% {
+		background-image: url(../../../../bgImages/bird.png);
+	}
+
+	50% {
+		background-image: url(../../../../bgImages/bird.png);
+	}
+	51% {
+		background-image: url(../../../../bgImages/bird-fly.png);
+	}
+
+	100% {
+		background-image: url(../../../../bgImages/bird-fly.png);
+	}
+}

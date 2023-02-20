@@ -1,0 +1,62 @@
+.sideMenu {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+}
+.sideMenuIn {
+	position: fixed;
+	width: 30vw;
+	height: 100vh;
+	background-color: #87b2eb;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	box-shadow: 2px 0px 9px 0px rgb(0 0 0 / 50%);
+	animation: openMenu 0.5s ease 1;
+}
+.sideMenu.closing .sideMenuIn {
+	left: -30vw;
+	transition: 0.5s ease;
+}
+@keyframes openMenu {
+	0% {
+		left: -30vw;
+	}
+
+	100% {
+		left: 0;
+	}
+}
+
+.sideMenu ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	font-size: 38px;
+	gap: 33px;
+	margin: 120px 40px 20px;
+	padding: 0;
+}
+.closeMenu {
+	position: absolute;
+	color: #888;
+	font-size: 26px;
+	right: 30px;
+	top: 30px;
+	background-color: #fed642;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	border: 2px solid #888;
+	cursor: pointer;
+}
+.sideMenuLi {
+	cursor: pointer;
+	text-align: center;
+}

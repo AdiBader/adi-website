@@ -1,0 +1,55 @@
+.scrollDiv8 .adiContainerDiv .habDiv {
+	position: absolute;
+	bottom: 10vh;
+	width: 25vw;
+	left: 60vw;
+	animation: liftHab 1s ease;
+	transition: 1s ease;
+}
+.scrollDiv7 .adiContainerDiv .habDiv {
+	animation: liftHab 1s ease reverse;
+}
+.adiContainerDiv .habDiv:before {
+	content: none;
+}
+.adiContainerDiv .habDiv .adiDriveHab {
+	background-image: url(../../../../bgImages/adiDriveHab1.png);
+	width: 30%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	position: absolute;
+	left: 43%;
+	top: unset;
+	bottom: 11%;
+	aspect-ratio: 1;
+	animation: habFront 3.5s none infinite;
+}
+
+@keyframes habFront {
+	0% {
+		background-image: url(../../../../bgImages/adiDriveHab1.png);
+	}
+	50% {
+		background-image: url(../../../../bgImages/adiDriveHab1.png);
+	}
+	50.1% {
+		background-image: url(../../../../bgImages/adiDriveHab2.png);
+	}
+	100% {
+		background-image: url(../../../../bgImages/adiDriveHab2.png);
+	}
+}
+
+@keyframes liftHab {
+	0% {
+		left: 40vw;
+		bottom: 18px;
+		width: 27.5vw;
+	}
+
+	100% {
+		left: 60vw;
+		bottom: 10vh;
+		width: 25vw;
+	}
+}

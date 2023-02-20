@@ -1,0 +1,86 @@
+.wchDiv {
+	position: absolute;
+	left: 272vw;
+	bottom: calc(300px + 25vh);
+	width: 50vw;
+	height: 300px;
+	color: white;
+	animation: wchAnimation 2.4s ease;
+}
+@keyframes wchAnimation {
+	0% {
+		bottom: -300px;
+		width: 0;
+		color: transparent;
+	}
+	46% {
+		bottom: calc(300px + 25vh);
+		width: 0;
+		color: transparent;
+	}
+	100% {
+		bottom: calc(300px + 25vh);
+		width: 50vw;
+	}
+}
+
+.wchDiv::after,
+.wchDiv:before {
+	content: '';
+	height: 100%;
+	aspect-ratio: 0.5;
+	border-radius: 1000px 0 0 1000px;
+	background-color: #fede42;
+	display: inline-block;
+	position: absolute;
+	right: 100%;
+	top: 0;
+}
+
+.wchDiv::after {
+	border-radius: 0 1000px 1000px 0;
+	right: unset;
+	left: 100%;
+}
+.wchDiv .ribbonTitle {
+	top: -50%;
+	animation: wchRibbonAnim 2.9s ease;
+}
+@keyframes wchRibbonAnim {
+	0% {
+		top: 0;
+		opacity: 0;
+	}
+	75% {
+		top: 0;
+		opacity: 0;
+	}
+
+	100% {
+		top: -50%;
+		opacity: 1;
+	}
+}
+.wchDivIn {
+	display: flex;
+	justify-content: space-around;
+	height: 300px;
+	overflow: hidden;
+}
+.wchTxt {
+	width: 46%;
+	font-size: 20px;
+}
+.wchPic {
+	width: 42%;
+}
+.wchPic img {
+	width: 100%;
+}
+.wchTxt h3 {
+	margin: 0;
+	font-size: 33px;
+}
+.wchTxt p {
+	font-size: 24px;
+}

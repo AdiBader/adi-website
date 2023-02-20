@@ -1,0 +1,114 @@
+.header {
+	position: fixed;
+	top: 0;
+	height: 100px;
+	background-color: #91e2fe;
+	width: 100%;
+	text-align: center;
+	box-shadow: 0 1px 10px 2px rgb(12 24 66 / 50%);
+	z-index: 999;
+}
+img.adiLogo {
+	height: 70%;
+	margin-top: 12px;
+}
+.headerContainer {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	height: 100%;
+	position: relative;
+}
+.menuButton {
+	position: absolute;
+	left: 0;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-color: #fed642;
+	border: 1px solid #888;
+	display: flex;
+	top: 16px;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	flex-direction: column;
+	padding: 8px;
+	box-shadow: 1px 1px 1px 1px #888888;
+}
+.menuButtonLine {
+	width: 80%;
+	display: block;
+	margin: 0 auto;
+	height: 1px;
+	background-color: #888;
+	justify-content: space-around;
+}
+a.headerPdfLink {
+	position: absolute;
+	right: 0;
+	top: 25px;
+	font-size: 36px;
+}
+a.headerPdfLink path {
+	stroke: #666;
+	stroke-width: 1px;
+}
+.headerGlow {
+	background: rgb(255, 255, 255);
+	width: 120px;
+	height: 100%;
+	z-index: 999;
+	position: absolute;
+	-webkit-animation: headerFlow 4s linear infinite;
+	-moz-animation: headerFlow 3s linear infinite;
+	-webkit-transform: skew(20deg);
+	-moz-transform: skew(20deg);
+	-o-transform: skew(20deg);
+	background: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0) 1%,
+		rgba(255, 255, 255, 1) 100%
+	);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 );
+	border-left: 1px solid #fff;
+}
+
+@-webkit-keyframes headerFlow {
+	0% {
+		left: 0;
+		opacity: 0;
+	}
+	17% {
+		opacity: 0.3;
+	}
+	34% {
+		opacity: 0.3;
+	}
+	50% {
+		left: calc(100% - 60px);
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+@keyframes headerFlow {
+	00% {
+		left: 0;
+		opacity: 0;
+	}
+	17% {
+		opacity: 0.3;
+	}
+	34% {
+		opacity: 0.3;
+	}
+	50% {
+		left: calc(100% - 60px);
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}

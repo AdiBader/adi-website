@@ -1,0 +1,24 @@
+.sectionTitle {
+	position: absolute;
+	color: white;
+	top: 13%;
+	height: auto;
+	left: 0;
+	margin: 0;
+	width: 100vw;
+	display: flex;
+}
+.sectionTitleDiv {
+	outline: 6px solid #fdfaaa;
+	width: auto;
+	margin: 0 auto;
+	text-align: center;
+}
+.sectionTitle h1 {
+	padding: 8px 50px 12px;
+	font-size: 76px;
+	margin: 0;
+	text-align: center;
+	font-weight: 900;
+	width: auto;
+}

@@ -1,0 +1,136 @@
+.level2 .palms {
+	display: flex;
+
+	align-items: baseline;
+	flex-wrap: wrap;
+	height: 100%;
+	bottom: 0;
+	position: absolute;
+	background-repeat-y: no-repeat;
+	width: 90%;
+	right: 0;
+}
+.palmsWrap {
+	display: flex;
+	/* left: 130vw; */
+	align-items: baseline;
+	flex-wrap: wrap;
+	height: 50vh;
+	bottom: 110px;
+	position: absolute;
+	background-repeat-y: no-repeat;
+	width: 50vw;
+}
+.tableDiv {
+	position: relative;
+	width: 100%;
+	height: calc(80% + 45px);
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	top: -45px;
+}
+.tableDiv .divCat {
+	border-bottom: 1px solid #fff;
+}
+.tableDiv .divCat .divCatTitle {
+	padding: 10px;
+	font-size: 18px;
+}
+.level2 .palms.animatePalm .palm {
+	transition: 1s all ease-in-out;
+	bottom: 0;
+}
+.tags {
+	width: 90%;
+	position: absolute;
+	right: 0;
+	display: flex;
+	top: -32%;
+	z-index: 9;
+}
+.tags .tag {
+	width: 25%;
+	text-align: center;
+}
+.tags .tag p {
+	width: 50%;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 6px;
+	color: #6ad8fe;
+	font-weight: 600;
+	font-size: 16px;
+}
+.level2 .palms .palm {
+	height: auto;
+
+	width: 25%;
+
+	position: relative;
+	height: 100%;
+	background-position: 0;
+	bottom: -50vh;
+	transition: 1s all ease-in-out;
+}
+
+.level2 .palms .palm:nth-child(2n) {
+	transform: rotateY(180deg);
+}
+.level2 .palms .palm,
+.level2 .palms .palm:nth-child(2n) {
+	z-index: 1 !important;
+}
+
+.level2 .palms .palm .palmBody {
+	height: 100%;
+	background-image: url(../../../../bgImages/images2h/palmBg.png);
+	width: 14px;
+	background-size: 100%;
+	left: calc(50% - 7px);
+	position: absolute;
+	bottom: 0;
+	border-radius: 20px;
+}
+.level2 .palms .palm .palmBody:after {
+	content: '';
+	background-image: url(../../../../bgImages/images2h/palmHead.png);
+	background-size: 100%;
+	width: 1280%;
+	margin: 0 auto;
+	height: 320px;
+	background-repeat: no-repeat;
+	position: absolute;
+	top: -89px;
+	left: -83px;
+	z-index: -1;
+}
+
+.level2 .palms.animatePalm .palm.palm2 .palmBody {
+	height: 100%;
+}
+.level2 .palms.animatePalm .palm.palm3 .palmBody {
+	height: 80%;
+}
+.level2 .palms.animatePalm .palm.palm4 .palmBody {
+	height: 60%;
+}
+.level2 .palms.animatePalm .palm.palm2 {
+	transition-delay: 0.1s;
+}
+.level2 .palms.animatePalm .palm.palm3 {
+	transition-delay: 0.2s;
+}
+.level2 .palms.animatePalm .palm.palm4 {
+	transition-delay: 0.3s;
+}
+
+.palmTxt {
+	position: absolute;
+	top: 48%;
+	width: 45%;
+	left: 30%;
+	transition: none !important;
+}
