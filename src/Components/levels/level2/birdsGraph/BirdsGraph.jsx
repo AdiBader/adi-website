@@ -2,9 +2,19 @@ import './birdsGraph.css';
 import { useContext } from 'react';
 import PortfolioContext from '../../../../Context/PortfolioContext';
 import RibbonTitle from '../../../ribbonTitle/RibbonTitle';
+import { isMobile } from 'react-device-detect';
 
 function BirdsGraph() {
 	const { pageXposition } = useContext(PortfolioContext);
+
+	function animatebirdsGraph() {
+		if (isMobile) {
+			return pageXposition < -350 && 'animatebirdsGraph';
+		} else {
+			return pageXposition < -225 && 'animatebirdsGraph';
+		}
+	}
+
 	return (
 		<>
 			<RibbonTitle rTitle={'Multidisciplinary Worker'} />
@@ -43,9 +53,7 @@ function BirdsGraph() {
 					<p>UX</p>
 				</div>
 			</div>
-			<div
-				className={`birdsGraph ${pageXposition < -200 && 'animatebirdsGraph'}`}
-			>
+			<div className={`birdsGraph ${animatebirdsGraph()}`}>
 				<div className='birdsGraphCol birdsGraphColHtml '>
 					<div className='birdItem'></div>
 					<div className='birdItem'></div>

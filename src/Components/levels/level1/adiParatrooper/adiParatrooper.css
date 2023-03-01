@@ -51,7 +51,7 @@
 	background-size: contain;
 	background-repeat: no-repeat;
 	animation: pilotFront 3.5s none infinite;
-	left: -17%;
+	left: -74px;
 	top: -67px;
 }
 .adiParatrooper .rope {
@@ -208,5 +208,91 @@
 	}
 	100% {
 		transform: rotateY(180deg) skewX(0);
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.adiParatrooper .pilotTitle h2 {
+		padding: 6px 10px 10px;
+		font-size: 50px;
+	}
+	.adiParatrooper .pilot .pilotImg {
+		width: 150px;
+	}
+	.adiParatrooper .propelor {
+		left: 2px;
+		width: 48px;
+		top: -2px;
+	}
+	.adiParatrooper .pilot .pilotImg.pilotDriverImg {
+		height: 82px;
+		left: 51px;
+		top: -68px;
+		width: 53px;
+	}
+	.adiParatrooper .pilot {
+		top: 20px;
+	}
+	.adiParatrooper .rope {
+		width: calc(100% - 150px);
+
+		right: 24px;
+		position: absolute;
+		top: 22px;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.adiParatrooper {
+		top: 220vh;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.adiParatrooper {
+		top: 205vh;
+		width: 84vw;
+		left: 30vw;
+		animation: adiDrivePilotParatrooper2 1.2s ease-out;
+	}
+	@keyframes adiDrivePilotParatrooper2 {
+		0% {
+			left: -30vw;
+		}
+
+		100% {
+			left: 30vw;
+		}
+	}
+	.adiParatrooper .pilot {
+		width: 52%;
+	}
+	.adiParatrooper .title.pilotTitle {
+		width: 48%;
+	}
+	.adiParatrooper .pilotTitle h2 {
+		padding: 6px 6px 8px;
+		font-size: 30px;
+	}
+	.adiParatrooper .pilot {
+		top: 4px;
+	}
+
+	.adiParatrooper .pilot .pilotImg.pilotDriverImg {
+		height: 70px;
+		left: 44px;
+		top: -54px;
+		width: 46px;
+	}
+	.adiParatrooper .pilot .pilotImg {
+		width: 130px;
+		top: -44px;
+	}
+	.adiParatrooper .propelor {
+		left: 2px;
+		width: 42px;
+		top: 3px;
+	}
+	.adiParatrooper .rope {
+		width: calc(100% - 130px);
 	}
 }

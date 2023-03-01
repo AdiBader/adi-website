@@ -1,30 +1,33 @@
 import { createContext, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 
 const PortfolioContext = createContext();
 
 const node0x = 0;
 const node0y = 0;
-const level1StoppingPoint = -180;
+const level1StoppingPoint = isMobile ? -170 : -180;
 const node12y = -400;
-const node2x = -275;
 
-const mountainBottom = -340;
-const pixelYConst = -60;
+const mountainWidth = isMobile ? 120 : 80;
 
-const mountainTop = 35;
-const mountainTopX = -310;
-const node3X = -370;
-const node4x = -430;
-const node4Slider = -480;
-const node5x = -550;
-const node6x = -555;
-const node7x = -620;
-const node8x = -700;
+const node2x = isMobile ? -515 : -275;
+const mountainTop = mountainWidth / 2 - 5;
+const mountainTopX = node2x - mountainWidth / 2;
+const mountainBottom = node2x - mountainWidth + 10;
+
+const node3X = isMobile ? -670 : -370;
+const node4x = isMobile ? -720 : -430;
+const node4Slider = isMobile ? -770 : -480;
+const node5x = isMobile ? -855 : -550;
+const node6x = isMobile ? -860 : -555;
+const node7x = isMobile ? -950 : -620;
+const node8x = isMobile ? -1050 : -700;
 
 const node9y = -100;
 
-const deltaScroll = 5;
-const deltaScrollh = 5;
+// const isMobile = false;
+const deltaScroll = isMobile ? 2.5 : 10;
+const deltaScrollh = isMobile ? 5 : 5;
 
 export const PortfolioProvider = ({ children }) => {
 	const [pageXposition, setPageXposition] = useState(0);
@@ -33,8 +36,7 @@ export const PortfolioProvider = ({ children }) => {
 	const [walkingDirection, setWalkingDirection] = useState(100);
 	const [goDown, setGoDown] = useState(false);
 	const [mountainY, setMountainY] = useState(0);
-	const [pixelY, setPixelY] = useState(0);
-	const [reachedMountainTop, setReachedMountainTop] = useState(false);
+
 	const [noTransition, setNoTransition] = useState(false);
 
 	const [newSliderIndex, setNewSliderIndex] = useState(0);
@@ -44,7 +46,7 @@ export const PortfolioProvider = ({ children }) => {
 		if (pageYposition === node0y && pageXposition === node0x) {
 			// Starting Point = node0
 			if (walkingDirection > 0) {
-				setPageYposition(pageYposition - 80);
+				setPageYposition(pageYposition - deltaScroll);
 				setCurrentLevel(1);
 			} else if (walkingDirection < 0) {
 				setCurrentLevel(0);
@@ -107,16 +109,13 @@ export const PortfolioProvider = ({ children }) => {
 				setMountainY(mountainY + deltaScrollh);
 			}
 		} else if (mountainY === mountainTop) {
-			setPixelY(0);
 			// What happens at node mountain top
 			if (walkingDirection < 0) {
 				setPageXposition(pageXposition + deltaScrollh);
 				setMountainY(mountainY - deltaScrollh);
-				setReachedMountainTop(false);
 			} else if (walkingDirection > 0) {
 				setPageXposition(pageXposition - deltaScrollh);
 				setMountainY(mountainY - deltaScrollh);
-				setReachedMountainTop(true);
 			}
 		} else if (
 			pageXposition <= mountainTopX &&
@@ -137,11 +136,9 @@ export const PortfolioProvider = ({ children }) => {
 				setPageXposition(pageXposition + deltaScrollh);
 				setMountainY(mountainY + deltaScrollh);
 				setPageYposition(node12y);
-				setPixelY(0);
 			} else if (walkingDirection > 0) {
 				setPageXposition(pageXposition - deltaScrollh);
 				setPageYposition(node12y);
-				setPixelY(pixelYConst);
 			}
 		} else if (pageXposition < mountainBottom && pageXposition > node3X) {
 			// What happens between mountainBottom and node3
@@ -228,10 +225,19 @@ export const PortfolioProvider = ({ children }) => {
 				setPageYposition(pageYposition - deltaScroll);
 			} else if (walkingDirection > 0) {
 				setPageYposition(pageYposition);
-				setPixelY(0);
+
 				setCurrentLevel(9);
 			}
 		}
+
+		// // Test
+		// const scrollY = (window.innerHeight / 100) * 5;
+		// window.scrollBy({
+		// 	top: scrollY,
+		// 	left: 0,
+		// 	behavior: 'smooth',
+		// });
+		// console.log(scrollY);
 	}
 
 	function noTransFunc() {
@@ -255,7 +261,7 @@ export const PortfolioProvider = ({ children }) => {
 		setPageXposition(node0x);
 		setPageYposition(node0y);
 		setCurrentLevel(0);
-		setPixelY(0);
+
 		setNoTransition(true);
 		noTransFunc();
 	}
@@ -264,13 +270,13 @@ export const PortfolioProvider = ({ children }) => {
 		setPageYposition(node12y);
 		setCurrentLevel(2);
 		setNoTransition(true);
-		setPixelY(0);
+
 		noTransFunc();
 	}
 	function goToExp() {
 		setPageXposition(node4Slider);
 		setPageYposition(node12y);
-		setPixelY(pixelYConst);
+
 		setCurrentLevel(4);
 		setNewSliderIndex(0);
 		setNoTransition(true);
@@ -279,7 +285,7 @@ export const PortfolioProvider = ({ children }) => {
 	function goToEdu() {
 		setPageXposition(node8x);
 		setPageYposition(node12y + deltaScroll);
-		setPixelY(pixelYConst);
+
 		setCurrentLevel(8);
 		setNoTransition(true);
 		noTransFunc();
@@ -287,7 +293,7 @@ export const PortfolioProvider = ({ children }) => {
 	function goToContact() {
 		setPageXposition(node8x);
 		setPageYposition(node9y);
-		setPixelY(0);
+
 		setCurrentLevel(9);
 		setNoTransition(true);
 		noTransFunc();
@@ -319,8 +325,6 @@ export const PortfolioProvider = ({ children }) => {
 				moveToLevel2,
 				goDown,
 				mountainY,
-				pixelY,
-				reachedMountainTop,
 				sliderTractor,
 				newSliderIndex,
 				noTransition,

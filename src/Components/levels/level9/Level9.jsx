@@ -4,6 +4,7 @@ import './level9.css';
 import HeaderComponent from '../../headerComponent/HeaderComponent';
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Fireworks } from '@fireworks-js/react';
+import { isMobile } from 'react-device-detect';
 
 function Level9({ currentLevel }) {
 	const [finishFirework, setFinishFirework] = useState(false);
@@ -18,12 +19,17 @@ function Level9({ currentLevel }) {
 	}, [currentLevel]);
 
 	return (
-		<div className='level9'>
+		<div
+			className='level9'
+			style={{
+				height: `${isMobile ? window.innerHeight + 'px' : '100vh'}`,
+				top: `${isMobile && window.innerHeight + 'px'}`,
+			}}
+		>
 			{currentLevel === 9 && (
 				<div className='level9Div'>
 					<HeaderComponent />
 					<div className='contactContainer'>
-						<ContactFormComponent />
 						<div className='contactTextDiv'>
 							<h1>CONTACT ME</h1>
 							<p>
@@ -34,6 +40,7 @@ function Level9({ currentLevel }) {
 								<br /> Feel free to contact me.
 							</p>
 						</div>
+						<ContactFormComponent />
 					</div>
 					{!finishFirework && (
 						<div className='fwDiv'>

@@ -56,13 +56,14 @@
 	text-align: center;
 }
 .tags .tag p {
-	width: 50%;
+	width: auto;
 	margin: 0 auto;
 	background-color: #fff;
 	padding: 6px;
 	color: #6ad8fe;
 	font-weight: 600;
 	font-size: 16px;
+	display: inline-block;
 }
 .level2 .palms .palm {
 	height: auto;
@@ -133,4 +134,58 @@
 	width: 45%;
 	left: 30%;
 	transition: none !important;
+}
+
+.mobile .palmsWrap {
+	width: 86vw;
+}
+
+@media screen and (max-width: 1367px) {
+	.level2 .palms,
+	.level2 .palmsWrap .tags {
+		width: 82%;
+	}
+	.tableDiv .divCat .divCatTitle {
+		font-size: 16px;
+	}
+	.level2 .palms .palm .palmBody {
+		width: 10px;
+		left: calc(50% - 5px);
+	}
+	.level2 .palms .palm .palmBody:after {
+		top: -63px;
+		left: -59px;
+	}
+	.palmsWrap {
+		height: 44vh;
+		width: 56vw;
+	}
+}
+@media screen and (max-width: 414px) {
+	.tableDiv .divCat .divCatTitle {
+		font-size: 12px;
+		padding: 3px 3px 5px;
+	}
+	.mobile .palmsWrap {
+		width: 90vw;
+	}
+	.level2 .palms .palm .palmBody {
+		width: 6px;
+		left: calc(50% - 3px);
+	}
+	.level2 .palms .palm .palmBody:after {
+		top: -39px;
+		left: -35px;
+	}
+	.level2 .palms,
+	.level2 .palmsWrap .tags {
+		width: 75%;
+	}
+	.palmsWrap {
+		height: 40vh;
+	}
+	.tags .tag p {
+		padding: 3px;
+		font-size: 12px;
+	}
 }

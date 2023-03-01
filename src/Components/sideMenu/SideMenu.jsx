@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react';
 import PortfolioContext from '../../Context/PortfolioContext';
 import './sideMenu.css';
-import { TfiClose } from 'react-icons/tfi';
+import { AiOutlineClose } from 'react-icons/ai';
 import { useRef } from 'react';
 
 function SideMenu({ closeMenu }) {
@@ -32,7 +32,7 @@ function SideMenu({ closeMenu }) {
 		<div className={'sideMenu ' + closing} onClick={(e) => clickedOutside(e)}>
 			<div className='sideMenuIn' ref={boxRef}>
 				<button className='closeMenu' onClick={closingMenu}>
-					<TfiClose />
+					<AiOutlineClose />
 				</button>
 
 				<ul>

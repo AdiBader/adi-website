@@ -34,7 +34,7 @@ function AdiParatrooper() {
 				<div className='rope'></div>
 			</div>
 			<div className='title pilotTitle' onClick={() => paratrooper()}>
-				<h2>CLICK HERE!</h2>
+				<h2>START!</h2>
 			</div>
 		</div>
 	);

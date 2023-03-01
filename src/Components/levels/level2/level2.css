@@ -24,7 +24,7 @@
 	height: 150px;
 }
 .level2 .bg-images .ground {
-	background-image: url(../../../bgImages/images2h/field.png);
+	background-image: url(../../../bgImages/images2h/fieldM.png);
 	z-index: 9;
 	height: 95px;
 }
@@ -78,7 +78,7 @@
 .harTavor {
 	position: absolute;
 	left: 320vw;
-	bottom: 0;
+	bottom: 20px;
 	z-index: 9;
 	width: 80vw;
 	height: 40vw;
@@ -105,7 +105,7 @@
 	right: 0;
 	left: unset;
 	bottom: 116px;
-	z-index: 0;
+	z-index: -1;
 	position: absolute;
 	font-size: 14px;
 	width: auto;
@@ -180,5 +180,60 @@
 	}
 	100% {
 		left: 12vw;
+	}
+}
+.mobile .level2 .harTavor {
+	left: 560vw;
+	width: 140vw;
+	height: 70vw;
+}
+
+.mobile .harTavor .arrowSign {
+	bottom: calc(70vw + 100px);
+}
+
+@media screen and (max-width: 1367px) {
+	.ghDiv {
+		left: 12vw;
+		width: 75vw;
+	}
+	.ghm {
+		width: 40vw;
+	}
+	.gha {
+		left: 34vw;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.ghDiv {
+		left: 9vw;
+		width: 82vw;
+	}
+	.ghm {
+		width: 52%;
+	}
+	.gha {
+		left: 48%;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.ghDiv {
+		left: 0;
+		width: 100vw;
+	}
+	.ghm {
+		width: 64%;
+	}
+	.arrowSign {
+		left: calc(50% - 105px);
+		width: 180px;
+		line-height: 36px;
+		font-size: 14px;
+	}
+	.arrowSign:after,
+	.arrowSign div:before {
+		border-width: 18px;
 	}
 }

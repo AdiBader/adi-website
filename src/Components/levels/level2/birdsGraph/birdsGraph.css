@@ -118,3 +118,46 @@
 		background-image: url(../../../../bgImages/bird-fly.png);
 	}
 }
+
+.mobile .birdsGraphWrap {
+	width: 86vw;
+}
+.mobile .birdItem {
+	background-size: 38%;
+}
+
+@media screen and (max-width: 1367px) {
+	.birdsGraphWrap {
+		width: 44vw;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.mobile .birdsGraphWrap {
+		width: 90vw;
+		height: 42vh;
+	}
+	.birdsGraph {
+		height: 105.5%;
+		top: -23%;
+	}
+
+	.mobile .birdItem {
+		background-size: 48%;
+	}
+	.birdsGraphCol {
+		min-width: 23%;
+		margin-left: 3%;
+	}
+	.birdsGraphWrap .tags .tag {
+		padding: 3px;
+		width: inherit;
+		width: -webkit-fill-available;
+	}
+	.birdsGraphWrap .tags .tag p {
+		font-size: 10px;
+	}
+	.birdsGraphWrap .tags {
+		gap: 2%;
+	}
+}

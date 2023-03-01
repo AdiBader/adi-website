@@ -70,3 +70,43 @@ img.schoolLogo {
 	transform: rotateY(180deg);
 	left: -48px;
 }
+
+@media screen and (max-width: 414px) {
+	.educationDiv {
+		width: 64vw;
+		left: 5vw;
+	}
+	.eduBlock {
+		padding: 3%;
+	}
+	.eduBlockIn {
+		outline: 1px solid #6ad8fe;
+		padding: 2%;
+		background-color: rgba(255, 255, 255, 0.4);
+		box-shadow: 0 0 4px 2px rgb(0 0 0 / 40%);
+	}
+	.eduYears {
+		font-size: 26px;
+		margin-bottom: 2px;
+	}
+	.eduTitle {
+		font-size: 21px;
+	}
+	.eduSchool {
+		font-size: 18px;
+		margin-bottom: 4px;
+	}
+	.eduText {
+		width: 90%;
+		margin-bottom: 8px;
+		font-size: 14px;
+	}
+	.birdDiv {
+		width: 36px;
+		right: -30px;
+		top: -28px;
+	}
+	.birdDiv2 {
+		left: -30px;
+	}
+}

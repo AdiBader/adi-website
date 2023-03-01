@@ -112,3 +112,22 @@ a.headerPdfLink path {
 		opacity: 0;
 	}
 }
+
+@media screen and (max-width: 414px) {
+	.header {
+		height: 60px;
+	}
+	img.adiLogo {
+		height: 60%;
+	}
+	.menuButton {
+		width: 40px;
+		height: 40px;
+		top: 8px;
+		padding: 6px;
+	}
+	a.headerPdfLink {
+		top: 13px;
+		font-size: 29px;
+	}
+}

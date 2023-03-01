@@ -1,12 +1,16 @@
 .wchDiv {
 	position: absolute;
 	left: 272vw;
-	bottom: calc(300px + 25vh);
+	bottom: 45vh;
 	width: 50vw;
 	height: 300px;
 	color: white;
 	animation: wchAnimation 2.4s ease;
 }
+.mobile .wchDiv {
+	left: 332vw;
+}
+
 @keyframes wchAnimation {
 	0% {
 		bottom: -300px;
@@ -14,12 +18,12 @@
 		color: transparent;
 	}
 	46% {
-		bottom: calc(300px + 25vh);
+		bottom: 45vh;
 		width: 0;
 		color: transparent;
 	}
 	100% {
-		bottom: calc(300px + 25vh);
+		bottom: 45vh;
 		width: 50vw;
 	}
 }
@@ -83,4 +87,128 @@
 }
 .wchTxt p {
 	font-size: 24px;
+}
+
+@media screen and (max-width: 1537px) {
+	.wchTxt p {
+		font-size: 21px;
+	}
+}
+
+@media screen and (max-width: 1367px) {
+	.wchTxt p {
+		font-size: 18px;
+		margin-top: 10px;
+	}
+	.wchPic {
+		width: 38%;
+	}
+	.wchDiv .ribbonTitle {
+		top: -95px;
+		animation: wchRibbonAnim2 2.9s ease;
+	}
+	.wchDiv {
+		height: 260px;
+	}
+}
+
+@keyframes wchRibbonAnim2 {
+	0% {
+		top: 0;
+		opacity: 0;
+	}
+	75% {
+		top: 0;
+		opacity: 0;
+	}
+
+	100% {
+		top: -95;
+		opacity: 1;
+	}
+}
+@keyframes wchAnimation2 {
+	0% {
+		bottom: -300px;
+		width: 0;
+		color: transparent;
+	}
+	46% {
+		bottom: 45vh;
+		width: 0;
+		color: transparent;
+	}
+	100% {
+		bottom: 45vh;
+		width: 66vw;
+	}
+}
+@media screen and (max-width: 1080px) {
+	.wchDiv {
+		height: 280px;
+		width: 66vw;
+		animation: wchAnimation2 2.4s ease;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.mobile .wchDiv {
+		bottom: 40vh;
+		animation: wchAnimation3 2.4s ease;
+	}
+	.wchDivIn {
+		height: 280px;
+		flex-direction: column;
+		padding: 0 8px;
+		text-align: center;
+	}
+	.wchTxt {
+		width: 100%;
+	}
+	.wchTxt p {
+		font-size: 14px;
+		margin-top: 6px;
+	}
+	.wchTxt h3 {
+		font-size: 19px;
+	}
+	.wchPic {
+		width: 38%;
+		margin: 0 auto;
+	}
+	.wchDiv .ribbonTitle {
+		top: -60px;
+		animation: wchRibbonAnim3 2.9s ease;
+	}
+	@keyframes wchRibbonAnim3 {
+		0% {
+			top: 0;
+			opacity: 0;
+		}
+		75% {
+			top: 0;
+			opacity: 0;
+		}
+
+		100% {
+			top: -60px;
+			opacity: 1;
+		}
+	}
+	@keyframes wchAnimation3 {
+		0% {
+			bottom: -300px;
+			width: 0;
+			color: transparent;
+		}
+		46% {
+			bottom: 40vh;
+			width: 0;
+			color: transparent;
+		}
+		100% {
+			bottom: 40vh;
+			width: 66vw;
+		}
+	}
 }

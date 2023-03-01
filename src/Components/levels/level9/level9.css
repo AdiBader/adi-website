@@ -142,7 +142,7 @@ button {
 }
 
 .scrollDiv9 img.cloudLeft {
-	left: -100vw;
+	left: -130vw;
 	transition: 2s all ease-in-out;
 }
 .level9Div {
@@ -158,5 +158,101 @@ button {
 	}
 	100% {
 		opacity: 1;
+	}
+}
+
+@media screen and (max-width: 1367px) {
+	.contactFormComponent {
+		margin-top: 150px;
+	}
+	.contactFormComponent form {
+		gap: 18px;
+	}
+	.contactFormComponent .inputDiv.message textarea {
+		height: 160px;
+	}
+	.scrollDiv9 .adiContainerDiv .habDiv {
+		bottom: 30vh;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	.scrollDiv9 .adiContainerDiv .habDiv {
+		bottom: 33vh;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.level9 img.cloudRight {
+		right: -90vw;
+		top: 54vh;
+	}
+	.level9 img.cloudLeft {
+		height: 83vh;
+		left: -72vw;
+		top: 53vh;
+	}
+	.scrollDiv9 img.cloudLeft {
+		left: -300vw;
+	}
+	.scrollDiv9 img.cloudRight {
+		right: -300vw;
+	}
+	.contactFormComponent {
+		margin-top: 0;
+	}
+	.contactContainer {
+		padding-top: 100px;
+	}
+	.contactTextDiv {
+		position: unset;
+		width: 88%;
+	}
+	.contactFormComponent form {
+		gap: 16px;
+		width: 100%;
+		padding: 0;
+		margin: 26px auto 0;
+	}
+	.contactTextDiv h1 {
+		font-size: 28px;
+		margin: 0;
+		padding-right: 0;
+	}
+	.contactTextDiv p {
+		font-size: 16px;
+		padding-right: 0;
+		margin: 8px auto 36px;
+	}
+	.contactFormComponent input,
+	.contactFormComponent textarea {
+		padding: 10px 8px;
+		font-size: 14px;
+	}
+	.contactFormComponent .inputDiv.message textarea {
+		height: 80px;
+	}
+	.contactFormComponent button {
+		padding: 12px;
+		font-size: 18px;
+		width: 120px;
+	}
+	.scrollDiv9 .adiContainerDiv .habDiv {
+		bottom: unset !important;
+		left: 77vw;
+		top: 100px;
+	}
+	.footer {
+		height: 120px;
+	}
+	.footer .bottomFooter .detailsContainer {
+		font-size: 11px;
+	}
+	.socialIcon {
+		font-size: 30px;
+	}
+	.socialIcon.linkedInIcon {
+		width: 30px;
+		font-size: 18px;
 	}
 }

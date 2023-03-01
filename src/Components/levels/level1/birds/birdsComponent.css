@@ -70,3 +70,36 @@
 		background-image: url(../../../../bgImages/bird-fly.png);
 	}
 }
+
+@media screen and (max-width: 414px) {
+	.birds .bird {
+		height: 64vw;
+		width: 8vw;
+
+		animation: animateBird2 6.5s linear infinite, flyingBird 0.4s ease infinite;
+		position: absolute;
+		right: -10vw;
+		top: 2vh;
+	}
+	@keyframes animateBird2 {
+		0% {
+			transform: rotate(0deg);
+		}
+
+		16% {
+			right: 46vw;
+			transform: rotate(0deg);
+			top: calc(46vh - 12vw);
+		}
+		82% {
+			transform: rotate(-390deg);
+			right: 46vw;
+			top: calc(46vh - 12vw);
+		}
+		100% {
+			right: 108vw;
+			transform: rotate(-390deg);
+			top: 90vh;
+		}
+	}
+}

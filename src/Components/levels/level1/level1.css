@@ -4,17 +4,17 @@
 }
 
 img.cloudRight {
-	height: 120vh;
-	right: -20%;
-	top: 40vh;
+	height: 70vh;
+	right: -10%;
+	top: 50vh;
 	position: absolute;
 	z-index: 9;
 	animation: animateCloudRightLittle 7s ease-in-out infinite;
+	rotate: 20deg;
 }
 .anim img.cloudRight {
-	animation: animateCloudRight 1s ease-in-out,
-		animateCloudRightLittle 6.6s ease-in-out infinite;
 	right: -60%;
+	transition: 1s all ease-in-out;
 }
 img.cloudLeft {
 	height: 130vh;
@@ -26,8 +26,6 @@ img.cloudLeft {
 	transition: 1s all ease-in-out;
 }
 .anim img.cloudLeft {
-	animation: animateCloudLeft 1s ease-in-out,
-		animateCloudLeftLittle 7.2s ease-in-out infinite;
 	left: -60%;
 	transition: 1s all ease-in-out;
 }
@@ -167,5 +165,99 @@ img.topCloud {
 	}
 	100% {
 		right: -60%;
+	}
+}
+
+@media screen and (max-width: 1367px) {
+	.text1Component {
+		font-size: 32px;
+	}
+	img.cloudLeft {
+		height: 110vh;
+		left: -26%;
+		top: 50vh;
+	}
+	img.cloudRight {
+		right: -30%;
+	}
+	img.topCloud {
+		right: -32%;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	img.cloudLeft {
+		height: 100vh;
+		left: -33%;
+		top: 58vh;
+	}
+	img.cloudRight {
+		right: -40%;
+		top: 60vh;
+	}
+	.anim img.cloudRight {
+		right: -90%;
+	}
+	.anim img.cloudLeft {
+		left: -90%;
+	}
+}
+
+@media screen and (max-width: 810px) {
+	img.cloudLeft {
+		height: 72vh;
+		left: -54vw;
+		top: 56vh;
+	}
+	img.cloudRight {
+		right: -60vw;
+		top: 60vh;
+	}
+	.anim img.cloudRight {
+		right: -140vw;
+	}
+	.anim img.cloudLeft {
+		left: -120vw;
+	}
+	img.topCloud {
+		right: -75vw;
+	}
+	img.adiTitle {
+		width: 40%;
+	}
+	.text1Component {
+		top: 142vh;
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	img.topCloud {
+		right: -42vw;
+		width: 100vw;
+	}
+	img.cornerCloud {
+		top: -8vh !important;
+		left: -7vw;
+	}
+	img.cloudRight {
+		right: -140vw;
+		top: 51vh;
+	}
+	img.cloudLeft {
+		height: 70vh;
+		left: -86vw;
+		top: 55vh;
+	}
+	.anim img.cloudRight {
+		right: -260vw;
+	}
+	.anim img.cloudLeft {
+		left: -220vw;
+	}
+	.text1Component {
+		top: 141vh;
+		font-size: 25px;
+		width: 80%;
 	}
 }

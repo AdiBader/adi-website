@@ -66,7 +66,7 @@
 	position: absolute;
 	left: unset;
 	right: -70vw;
-	bottom: -26px;
+	bottom: 23px;
 	z-index: 9;
 }
 .tractorLevel4 {
@@ -122,5 +122,33 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+.mobile .level2 .tractorDiv {
+	right: -140vw;
+}
+@media screen and (max-width: 1280px) {
+	.tractorDiv {
+		width: 280px;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.tractorDiv {
+		width: 240px;
+		left: calc(50% - 120px);
+	}
+	.mobile .level2 .tractorDiv {
+		right: -170vw;
+	}
+	.tractorDiv.tractorLevel4 {
+		left: 5%;
+		transition: 1s linear;
+	}
+	.tractorDiv.tractorLevel4.tractorIndex1 {
+		left: calc(50% - 120px);
+	}
+	.tractorDiv.tractorLevel4.tractorIndex2 {
+		left: calc(100% - 240px);
 	}
 }

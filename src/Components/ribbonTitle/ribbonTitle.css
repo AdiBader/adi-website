@@ -158,3 +158,23 @@
 	left: 100%;
 	margin-left: -10px;
 }
+
+@media screen and (max-width: 1367px) {
+	.sliderDiv .ribbonTitle {
+		top: -12%;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.ribbonTitle .ribbonTitleDiv h2 {
+		font-size: 13px;
+	}
+	.ribbonTitle {
+		width: 180px;
+		line-height: 32px;
+	}
+	.ribbonTitle .ribbonTitleDiv:before,
+	.ribbonTitle .ribbonTitleDiv:after {
+		border-width: 16px;
+	}
+}

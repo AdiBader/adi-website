@@ -1,8 +1,15 @@
 import AdiImage from './AdiImage';
 import AdiHab from '../levels/level8/adiHab/AdiHab';
-import { useContext, useState, useEffect, useRef } from 'react';
+import {
+	useContext,
+	useState,
+	useEffect,
+	useRef,
+	useLayoutEffect,
+} from 'react';
 import PortfolioContext from '../../Context/PortfolioContext';
 // import ReactScrollWheelHandler from 'react-scroll-wheel-handler';
+// import { useSwipeable } from 'react-swipeable';
 
 import AdiTractor from '../levels/level3/adiTractor/AdiTractor';
 
@@ -15,6 +22,82 @@ function AdiContainer() {
 		newSliderIndex,
 	} = useContext(PortfolioContext);
 	const [stopped, setStopped] = useState();
+
+	// Detect swipe
+	const [touchStart, setTouchStart] = useState({});
+	const [touchEnd, setTouchEnd] = useState({});
+
+	// the required distance between touchStart and touchEnd to be detected as a swipe
+	const minSwipeDistanceX = 4;
+	const minSwipeDistanceY = 4;
+
+	const onTouchStart = (e) => {
+		console.log(`${e.targetTouches[0].clientY} start`);
+		setTouchEnd({}); // otherwise the swipe is fired even with usual touch events
+		setTouchStart({
+			x: e.targetTouches[0].clientX,
+			y: e.targetTouches[0].clientY,
+		});
+		setStopped(false);
+	};
+
+	const onTouchMove = (e) => {
+		console.log(e.targetTouches[0].clientY);
+		setTouchEnd({
+			x: e.targetTouches[0].clientX,
+			y: e.targetTouches[0].clientY,
+		});
+		checkAndFire();
+		setTouchStart(touchEnd);
+	};
+	function checkAndFire() {
+		if (!goDown) {
+			if (!touchStart.x || !touchEnd.x) return;
+			const distanceX = touchStart.x - touchEnd.x;
+			const distanceXvw = Math.round(
+				(Math.abs(distanceX) * 100) / window.innerWidth / 5
+			);
+			console.log(`round: ${distanceXvw}`);
+
+			const distanceY = touchStart.y - touchEnd.y;
+
+			if (
+				Math.abs(distanceX) > Math.abs(distanceY) &&
+				Math.abs(distanceX) > minSwipeDistanceX
+			) {
+				if (distanceX > minSwipeDistanceX) {
+					// If swipe left
+					handleOnWheel(100);
+					console.log(`distanceX: ${distanceX}, swipe left`);
+				} else if (distanceX < -minSwipeDistanceX) {
+					// If swipe right
+					handleOnWheel(-100);
+					console.log(`distanceX: ${distanceX}, swipe right`);
+				}
+			} else if (
+				Math.abs(distanceY) > Math.abs(distanceX) &&
+				Math.abs(distanceY) > minSwipeDistanceY
+			) {
+				if (distanceY > minSwipeDistanceY) {
+					// If swipe down
+					handleOnWheel(100);
+					console.log(`distanceY: ${distanceY}, swipe down`);
+				} else if (distanceY < -minSwipeDistanceY) {
+					// If swipe up
+					handleOnWheel(-100);
+					console.log(`distanceY: ${distanceY}, swipe up`);
+				}
+			}
+		}
+	}
+
+	const onTouchEnd = () => {
+		console.log(`touchStart: ${touchStart.y}, touchEnd: ${touchEnd.y}`);
+		setTouchEnd({}); // otherwise the swipe is fired even with usual touch events
+		setTouchStart({});
+		setStopped(true);
+	};
+
 	console.log(currentLevel);
 
 	const ref = useRef(null);
@@ -82,12 +165,30 @@ function AdiContainer() {
 			}
 		}
 	}
+	function useLockBodyScroll() {
+		useLayoutEffect(() => {
+			// Get original body overflow
+			const originalStyle = window.getComputedStyle(document.body).overflow;
+			// Prevent scrolling on mount
+			document.body.style.overflow = 'hidden';
+			// Re-enable scrolling when component unmounts
+			return () => (document.body.style.overflow = originalStyle);
+		}, []); // Empty array ensures effect is only run on mount and unmount
+	}
+	useLockBodyScroll();
 
 	return (
 		<div
+			style={{ height: `${window.innerHeight}px` }}
 			className='adiContainerDiv'
+			onTouchStart={onTouchStart}
+			onTouchMove={onTouchMove}
+			onTouchEnd={onTouchEnd}
 			ref={ref}
 			onWheel={(evt) => {
+				console.log(evt);
+				console.log(window);
+
 				if (!goDown) {
 					handleOnWheel(evt.deltaY);
 					currentLevel >= 2 && onScrollStop(() => setStopped(true));

@@ -11,14 +11,14 @@ function Board() {
 	const { currentLevel, closeSlider } = useContext(PortfolioContext);
 
 	return (
-		<div>
+		<div className='board'>
 			{currentLevel <= 2 && <div className='laundry'></div>}
 			{currentLevel < 2 && <Level1 />}
 			{currentLevel > 1 && currentLevel < 9 && <Level2 />}
 			{currentLevel > 1 && currentLevel < 9 && (
 				<Level3 currentLevel={currentLevel} closeSlider={closeSlider} />
 			)}
-			{currentLevel >= 7 && currentLevel < 9 && (
+			{currentLevel >= 6 && currentLevel < 9 && (
 				<Level8 currentLevel={currentLevel} />
 			)}
 			{currentLevel >= 8 && <Level9 currentLevel={currentLevel} />}

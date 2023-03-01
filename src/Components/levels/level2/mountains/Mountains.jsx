@@ -2,9 +2,18 @@ import './mountains.css';
 import { useContext } from 'react';
 import PortfolioContext from '../../../../Context/PortfolioContext';
 import RibbonTitle from '../../../ribbonTitle/RibbonTitle';
+import { isMobile } from 'react-device-detect';
 
 function Mountains() {
 	const { pageXposition } = useContext(PortfolioContext);
+
+	function animateMountain() {
+		if (isMobile) {
+			return pageXposition < -80 && 'animateMountain';
+		} else {
+			return pageXposition < -50 && 'animateMountain';
+		}
+	}
 	return (
 		<>
 			<RibbonTitle rTitle={'Programming Languages'} />
@@ -29,7 +38,7 @@ function Mountains() {
 					<div className='divCatTitle'>BEGINNER</div>
 				</div>
 			</div>
-			<div className={`mountains ${pageXposition < -40 && 'animateMountain'}`}>
+			<div className={`mountains ${animateMountain()}`}>
 				<div className='mountain mountainHtml'>
 					<img
 						src='./images/htmlTxt.png'

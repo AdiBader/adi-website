@@ -53,3 +53,27 @@
 		width: 25vw;
 	}
 }
+
+@media screen and (max-width: 414px) {
+	.scrollDiv8 .adiContainerDiv .habDiv {
+		position: absolute;
+		bottom: 10vh;
+		width: 26vw;
+		left: 71vw;
+		animation: liftHab2 1s ease;
+		transition: 1s ease;
+	}
+	@keyframes liftHab {
+		0% {
+			left: 40vw;
+			bottom: 18px;
+			width: 27.5vw;
+		}
+
+		100% {
+			left: 71vw;
+			bottom: 10vh;
+			width: 26vw;
+		}
+	}
+}

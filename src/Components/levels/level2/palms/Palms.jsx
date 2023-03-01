@@ -2,9 +2,19 @@ import './palms.css';
 import { useContext } from 'react';
 import RibbonTitle from '../../../ribbonTitle/RibbonTitle';
 import PortfolioContext from '../../../../Context/PortfolioContext';
+import { isMobile } from 'react-device-detect';
 
 function Palms() {
 	const { pageXposition } = useContext(PortfolioContext);
+
+	function animatePalm() {
+		if (isMobile) {
+			return pageXposition < -225 && 'animatePalm';
+		} else {
+			return pageXposition < -130 && 'animatePalm';
+		}
+	}
+
 	return (
 		<>
 			<RibbonTitle rTitle={'Graphic Software'} />
@@ -44,7 +54,7 @@ function Palms() {
 				</div>
 			</div>
 
-			<div className={`palms ${pageXposition < -130 && 'animatePalm'}`}>
+			<div className={`palms ${animatePalm()}`}>
 				<div className='palm palm1'>
 					<div className='palmBody'></div>
 				</div>

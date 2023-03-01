@@ -6,6 +6,7 @@ import BirdsComponent from './birds/BirdsComponent';
 import AdiPilotComponent from '../level1/adiPilotComponent/AdiPilotComponent';
 import Text1Component from './Text1Component';
 import AdiParatrooper from './adiParatrooper/AdiParatrooper';
+import { isMobile } from 'react-device-detect';
 
 function Level1() {
 	const { currentLevel, pageYposition } = useContext(PortfolioContext);
@@ -14,8 +15,15 @@ function Level1() {
 	currentLevel === 1 ? (anim.current = 'anim') : (anim.current = '');
 
 	const animateParatrooper = useRef(false);
-	animateParatrooper.current = pageYposition <= -180 && true;
+	const animatePilot = useRef(false);
 
+	if (isMobile) {
+		animatePilot.current = pageYposition <= -60 && true;
+		animateParatrooper.current = pageYposition <= -130 && true;
+	} else if (!isMobile) {
+		animatePilot.current = pageYposition <= -100 && true;
+		animateParatrooper.current = pageYposition <= -180 && true;
+	}
 	return (
 		<div className='level1'>
 			<div className={'bg-images ' + anim.current}>
@@ -32,7 +40,8 @@ function Level1() {
 				<div className='birds'>
 					<BirdsComponent />
 				</div>
-				<AdiPilotComponent />
+				{animatePilot.current && <AdiPilotComponent />}
+
 				<Text1Component />
 				{animateParatrooper.current && <AdiParatrooper />}
 				<img src='./images/cloud.png' alt='' className='cloudFall' />

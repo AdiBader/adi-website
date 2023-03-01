@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import PortfolioContext from '../Context/PortfolioContext';
 import Board from './Board';
 import AdiContainer from './adiContainer/AdiContainer';
@@ -6,6 +6,7 @@ import { SlEnvolope } from 'react-icons/sl';
 import { GrDocumentPdf } from 'react-icons/gr';
 import MenuButton from './sideMenu/MenuButton';
 import pdf from './../ADI-BADER-CV.pdf';
+import { isMobile } from 'react-device-detect';
 
 function MainComponent() {
 	const {
@@ -13,7 +14,6 @@ function MainComponent() {
 		pageYposition,
 		goDown,
 		mountainY,
-		pixelY,
 		currentLevel,
 		noTransition,
 		goToContact,
@@ -21,18 +21,28 @@ function MainComponent() {
 	console.log(pageXposition);
 	console.log(pageYposition);
 
+	const ref = useRef(null);
+
+	const pyp = (pageYposition / 100) * window.innerHeight;
+
+	function vhToPx(objectY) {
+		return (objectY / 100) * window.innerHeight;
+	}
+
 	return (
 		<div className='mainDiv'>
 			<div
 				className={`scrollDiv scrollDiv${currentLevel} ${
 					noTransition && 'noTransition'
-				}`}
+				} ${isMobile && 'mobile'}`}
 			>
 				<div
 					className={`inScrollDiv ${goDown ? 'goDown' : ''}`}
+					ref={ref}
 					style={{
 						left: `${pageXposition}vW`,
-						top: `calc(${pageYposition}vh + ${mountainY}vw + ${pixelY}px)`,
+						top: `calc(${pyp}px + ${mountainY}vw)`,
+						height: `${isMobile ? vhToPx(500) + 'px' : 500 + 'vh'}`,
 					}}
 				>
 					<AdiContainer className='adiContainer' />

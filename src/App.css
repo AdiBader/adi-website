@@ -34,11 +34,11 @@
 }
 .inScrollDiv {
 	width: 2500vw;
-	height: calc(500vh + 156px);
+	height: 500vh;
 	transition: 0.2s linear;
 
 	top: 0;
-	position: absolute;
+	position: fixed;
 }
 
 .scrollDiv5 .inScrollDiv,
@@ -52,7 +52,7 @@
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	z-index: 9999;
 }
@@ -160,7 +160,7 @@ img.shadow {
 	top: 360vh;
 	background-image: url(./bgImages/images2h/laundry.png);
 	width: 100vw;
-	height: 220px;
+	height: 11.5vw;
 	background-size: 100%;
 	animation: laundryAnimation 3s ease-in-out infinite;
 }
@@ -176,7 +176,9 @@ img.shadow {
 		transform: skew(-6deg) rotateX(6deg);
 	}
 }
-
+.board {
+	z-index: 9;
+}
 .level1 {
 	width: 100vw;
 	left: 0;
@@ -187,9 +189,10 @@ img.shadow {
 .level2 {
 	width: 360vw;
 	left: 0;
-	top: 400vh;
+	/* top: 400vh; */
+	bottom: 0;
 	height: 100vh;
-	position: relative;
+	position: absolute;
 	/* background: linear-gradient(
 		0deg,
 		rgba(255, 187, 240, 0.4) 0%,
@@ -200,7 +203,7 @@ img.shadow {
 .level3 {
 	width: 900vw;
 	left: 360vw;
-	top: calc(400vh + 165px);
+	bottom: 0;
 	height: 100vh;
 	position: absolute;
 }
@@ -276,7 +279,7 @@ img.shadow {
 
 @keyframes goDownAnimation {
 	0% {
-		left: 66%;
+		left: 60%;
 		bottom: 100px;
 	}
 	5% {
@@ -322,5 +325,103 @@ img.shadow {
 
 	100% {
 		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 1367px) {
+	.text1Component {
+		font-size: 34px;
+	}
+}
+@media screen and (max-width: 1280px) {
+	.adiImageDiv {
+		height: 260px;
+	}
+	.adiImageDiv.notGoDown.walking {
+		height: 276px;
+	}
+}
+
+/* --------------------------------- Mobile --------------------------------- */
+.mobile .level2 {
+	width: 600vw;
+	position: absolute;
+	bottom: 0;
+}
+.mobile .level3 {
+	left: 600vw;
+}
+.mobile .level2 .harTavor {
+	left: 560vw;
+}
+.mobile .level8 {
+	left: 1050vw;
+}
+.mobile .level9 {
+	left: 1050vw;
+}
+
+@media screen and (max-width: 414px) {
+	.adiImageDiv.goDownPic {
+		animation: goDownAnimation2 2.8s linear;
+
+		height: 420px;
+		left: calc(45% - 150px);
+		bottom: 10px;
+		z-index: 9999;
+
+		/* position: fixed; */
+	}
+	.adiImageDiv {
+		height: 220px;
+	}
+	.adiImageDiv.notGoDown.walking {
+		height: 240px;
+	}
+	.laundry {
+		top: 336vh;
+	}
+	@keyframes goDownAnimation2 {
+		0% {
+			left: 40%;
+			bottom: 100px;
+		}
+		5% {
+			bottom: 300px;
+		}
+		25% {
+			transform: rotate(10deg);
+			bottom: 20vh;
+		}
+		50% {
+			transform: rotate(0deg);
+			bottom: 20vh;
+		}
+		75% {
+			transform: rotate(-12deg);
+			bottom: 10vh;
+		}
+		90% {
+			transform: rotate(-12deg);
+			bottom: 80px;
+		}
+
+		100% {
+			left: calc(45% - 150px);
+			bottom: 10px;
+		}
+	}
+
+	.fixedButtonsDiv .menuButton {
+		width: 30px;
+		height: 30px;
+		padding: 8px 0;
+	}
+	.contactLink {
+		width: 30px;
+		font-size: 18px;
+	}
+	.fixedButtonsDiv {
+		gap: 8px;
 	}
 }

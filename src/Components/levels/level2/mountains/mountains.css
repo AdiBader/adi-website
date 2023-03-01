@@ -12,7 +12,7 @@
 }
 .mountainsWrap {
 	display: flex;
-	left: 90vw;
+	left: 100vw;
 	align-items: baseline;
 	flex-wrap: wrap;
 	height: 36vh;
@@ -49,7 +49,7 @@
 }
 
 .level2 .mountains .mountain {
-	background-image: url(../../../../bgImages/images2h/mountain.png);
+	background-image: url(../../../../bgImages/images2h/mountain2.png);
 	background-position: 0;
 	z-index: 0;
 	height: auto;
@@ -86,4 +86,41 @@
 	width: 45%;
 	left: 30%;
 	transition: none !important;
+}
+
+.mobile .mountainsWrap {
+	width: 86vw;
+}
+
+@media screen and (max-width: 1367px) {
+	.level2 .mountains {
+		width: 86%;
+	}
+	.tableDiv .divCat .divCatTitle {
+		font-size: 16px;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.mountainsWrap {
+		height: 27vh;
+	}
+	.level2 .mountains {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.mobile .mountainsWrap {
+		width: 90vw;
+	}
+	.mountainsWrap {
+		height: 20vh;
+	}
+	.mountainTxt {
+		top: 40%;
+	}
+	.level2 .mountains {
+		bottom: 20px;
+	}
 }

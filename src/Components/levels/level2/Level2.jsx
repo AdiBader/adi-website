@@ -7,13 +7,14 @@ import BirdsGraph from './birdsGraph/BirdsGraph';
 import AdiTractor from '../level3/adiTractor/AdiTractor';
 import RibbonTitle from '../../ribbonTitle/RibbonTitle';
 import SectionTitle from '../../sectionTitle/SectionTitle';
+import { isMobile } from 'react-device-detect';
 
 function Level2() {
 	const { walkingDirection, currentLevel } = useContext(PortfolioContext);
 
-	const moveMountains = useRef(90);
-	const movePalms = useRef(180);
-	const moveBirds = useRef(250);
+	const moveMountains = useRef(isMobile ? 130 : 100);
+	const movePalms = useRef(isMobile ? 260 : 180);
+	const moveBirds = useRef(isMobile ? 390 : 250);
 	const cloudX = useRef(12);
 	const cloudY = useRef(4);
 	const cloudS = useRef(50);
@@ -50,7 +51,9 @@ function Level2() {
 			{currentLevel === 2 && (
 				<>
 					<SectionTitle sTitle={'ABOUT'} />
-					<div className={'bg-images '}>
+
+					<div className='bg-images '>
+						<div></div>
 						<div className='ground'></div>
 
 						<div

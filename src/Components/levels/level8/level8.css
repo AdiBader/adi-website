@@ -3,7 +3,7 @@ img.hab {
 }
 .habDiv {
 	position: absolute;
-	bottom: 115px;
+	bottom: 23px;
 	width: 27.5vw;
 	left: 30vw;
 }
@@ -20,7 +20,6 @@ img.hab {
 	filter: blur(4px);
 	opacity: 0.4;
 	border-radius: 50%;
-	animation: noShadow 1s linear;
 }
 .scrollDiv8 .laundryDiv {
 	left: 0;
@@ -50,7 +49,7 @@ img.hab {
 
 	left: -5vw;
 }
-.scrollDiv8 .sectionTitle {
+.scrollDiv8 .level8 .sectionTitle {
 	top: unset;
 	bottom: -32vh;
 	right: unset;
@@ -70,7 +69,7 @@ img.hab {
 }
 
 .level8 .habDiv {
-	animation: landHab 1s ease;
+	animation: landHab 0.4s ease;
 }
 
 @keyframes landHab {
@@ -81,7 +80,48 @@ img.hab {
 	}
 	100% {
 		left: 30vw;
-		bottom: 115px;
+		bottom: 23px;
 		width: 27.5vw;
+	}
+}
+@keyframes landHab2 {
+	0% {
+		left: 60vw;
+		bottom: 20vh;
+		width: 25vw;
+	}
+	100% {
+		left: 30vw;
+		bottom: 23px;
+		width: 36vw;
+	}
+}
+
+@media screen and (max-width: 1080px) {
+	.level8 .habDiv {
+		width: 36vw;
+		animation: landHab2 0.4s ease;
+	}
+}
+
+@media screen and (max-width: 414px) {
+	.level8 .habDiv {
+		width: 76vw;
+		animation: landHab3 0.4s ease;
+	}
+	@keyframes landHab3 {
+		0% {
+			left: 60vw;
+			bottom: 20vh;
+			width: 25vw;
+		}
+		100% {
+			left: 30vw;
+			bottom: 23px;
+			width: 76vw;
+		}
+	}
+	.scrollDiv8 .laundryDiv .laundry {
+		animation: none;
 	}
 }
