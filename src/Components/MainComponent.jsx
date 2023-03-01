@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import PortfolioContext from '../Context/PortfolioContext';
 import Board from './Board';
 import AdiContainer from './adiContainer/AdiContainer';
