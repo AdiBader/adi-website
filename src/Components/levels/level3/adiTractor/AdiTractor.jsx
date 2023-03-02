@@ -1,6 +1,7 @@
 import Tractor from './../../../../tractor.png';
 import './adiTractor.css';
 import { useEffect, useState } from 'react';
+import ChangingPic from '../../../ChangingPic';
 
 function AdiTractor({
 	stoppedWalking = true,
@@ -34,7 +35,14 @@ function AdiTractor({
 				<img src='./images/Twheel.png' alt='Wheel' className='tWheel' />
 				<img src='./images/Twheel.png' alt='Wheel' className='tWheel small' />
 				{currentLevel > 2 && currentLevel < 7 && (
-					<div className='adiDriveT'></div>
+					<div className='adiDriveT'>
+						<ChangingPic
+							pic1={'./images/switching/adiDriveTfront.png'}
+							pic2={'./images/switching/adiDriveTside.png'}
+							time={1750}
+							title={'Adi'}
+						/>
+					</div>
 				)}
 			</div>
 		</div>

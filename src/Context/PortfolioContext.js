@@ -229,15 +229,6 @@ export const PortfolioProvider = ({ children }) => {
 				setCurrentLevel(9);
 			}
 		}
-
-		// // Test
-		// const scrollY = (window.innerHeight / 100) * 5;
-		// window.scrollBy({
-		// 	top: scrollY,
-		// 	left: 0,
-		// 	behavior: 'smooth',
-		// });
-		// console.log(scrollY);
 	}
 
 	function noTransFunc() {

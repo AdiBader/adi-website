@@ -35,3 +35,8 @@
 		font-size: 36px;
 	}
 }
+@media screen and (max-width: 800px) {
+	.sectionTitle {
+		top: 25%;
+	}
+}

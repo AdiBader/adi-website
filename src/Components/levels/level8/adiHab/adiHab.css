@@ -13,16 +13,14 @@
 	content: none;
 }
 .adiContainerDiv .habDiv .adiDriveHab {
-	background-image: url(../../../../bgImages/adiDriveHab1.png);
 	width: 30%;
-	background-size: 100%;
-	background-repeat: no-repeat;
+
 	position: absolute;
 	left: 43%;
 	top: unset;
 	bottom: 11%;
 	aspect-ratio: 1;
-	animation: habFront 3.5s none infinite;
+	/* animation: habFront 3.5s none infinite; */
 }
 
 @keyframes habFront {
@@ -63,11 +61,11 @@
 		animation: liftHab2 1s ease;
 		transition: 1s ease;
 	}
-	@keyframes liftHab {
+	@keyframes liftHab2 {
 		0% {
-			left: 40vw;
-			bottom: 18px;
-			width: 27.5vw;
+			left: 30vw;
+			bottom: 23px;
+			width: 76vw;
 		}
 
 		100% {

@@ -5,7 +5,7 @@ import SectionTitle from '../../sectionTitle/SectionTitle';
 function Level8({ currentLevel }) {
 	return (
 		<div className='level8'>
-			{currentLevel === 7 && (
+			{currentLevel >= 6 && currentLevel < 8 && (
 				<div className='habDiv'>
 					<img src='./images/hab.png' alt='' className='hab' />
 				</div>

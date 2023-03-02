@@ -1,4 +1,5 @@
 import './educationComponent.css';
+import ChangingPic from '../../../ChangingPic';
 
 const educationArray = [
 	{
@@ -30,14 +31,31 @@ const educationArray = [
 	},
 ];
 
+const birdPic1 = './images/switching/bird.png';
+const birdPic2 = './images/switching/bird-fly.png';
+
 function EducationComponent() {
 	return (
 		<div className='educationDivIn'>
 			{educationArray.map((item) => {
 				return (
 					<div className={'eduBlock eduBlock' + item.id} key={item.id}>
-						<div className='birdDiv birdDiv1'></div>
-						<div className='birdDiv birdDiv2'></div>
+						<div className='birdDiv birdDiv1'>
+							<ChangingPic
+								pic1={birdPic1}
+								pic2={birdPic2}
+								time={250}
+								title={'bird'}
+							/>
+						</div>
+						<div className='birdDiv birdDiv2'>
+							<ChangingPic
+								pic1={birdPic1}
+								pic2={birdPic2}
+								time={250}
+								title={'bird'}
+							/>
+						</div>
 						<div className='eduBlockIn'>
 							<img
 								src={item.logoPath}

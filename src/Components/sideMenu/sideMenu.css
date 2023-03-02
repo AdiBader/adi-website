@@ -4,7 +4,9 @@
 	height: 100vh;
 	left: 0;
 	top: 0;
+	z-index: 9999999;
 }
+
 .sideMenuIn {
 	position: fixed;
 	width: 30vw;
@@ -20,6 +22,7 @@
 	left: -30vw;
 	transition: 0.5s ease;
 }
+
 @keyframes openMenu {
 	0% {
 		left: -30vw;

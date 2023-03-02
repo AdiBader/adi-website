@@ -17,7 +17,7 @@ function Level2() {
 	const moveBirds = useRef(isMobile ? 390 : 250);
 	const cloudX = useRef(12);
 	const cloudY = useRef(4);
-	const cloudS = useRef(50);
+	const cloudS = useRef(isMobile ? 60 : 50);
 	const aboveGround = useRef(0);
 
 	walkingDirection < 0

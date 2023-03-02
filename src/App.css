@@ -276,6 +276,12 @@ img.shadow {
 .pdfLink path {
 	stroke: #666;
 }
+.changingPicImg {
+	line-height: 0;
+}
+.changingPicImg img {
+	width: 100%;
+}
 
 @keyframes goDownAnimation {
 	0% {

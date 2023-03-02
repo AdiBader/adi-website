@@ -236,4 +236,13 @@
 	.arrowSign div:before {
 		border-width: 18px;
 	}
+	.clouds .cloud {
+		width: 36%;
+	}
+	.clouds {
+		height: 26%;
+	}
+	.level2 .sun2 {
+		width: 11vw;
+	}
 }

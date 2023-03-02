@@ -32,7 +32,6 @@ function AdiContainer() {
 	const minSwipeDistanceY = 4;
 
 	const onTouchStart = (e) => {
-		console.log(`${e.targetTouches[0].clientY} start`);
 		setTouchEnd({}); // otherwise the swipe is fired even with usual touch events
 		setTouchStart({
 			x: e.targetTouches[0].clientX,
@@ -42,7 +41,6 @@ function AdiContainer() {
 	};
 
 	const onTouchMove = (e) => {
-		console.log(e.targetTouches[0].clientY);
 		setTouchEnd({
 			x: e.targetTouches[0].clientX,
 			y: e.targetTouches[0].clientY,
@@ -57,7 +55,6 @@ function AdiContainer() {
 			const distanceXvw = Math.round(
 				(Math.abs(distanceX) * 100) / window.innerWidth / 5
 			);
-			console.log(`round: ${distanceXvw}`);
 
 			const distanceY = touchStart.y - touchEnd.y;
 
@@ -68,11 +65,9 @@ function AdiContainer() {
 				if (distanceX > minSwipeDistanceX) {
 					// If swipe left
 					handleOnWheel(100);
-					console.log(`distanceX: ${distanceX}, swipe left`);
 				} else if (distanceX < -minSwipeDistanceX) {
 					// If swipe right
 					handleOnWheel(-100);
-					console.log(`distanceX: ${distanceX}, swipe right`);
 				}
 			} else if (
 				Math.abs(distanceY) > Math.abs(distanceX) &&
@@ -81,24 +76,19 @@ function AdiContainer() {
 				if (distanceY > minSwipeDistanceY) {
 					// If swipe down
 					handleOnWheel(100);
-					console.log(`distanceY: ${distanceY}, swipe down`);
 				} else if (distanceY < -minSwipeDistanceY) {
 					// If swipe up
 					handleOnWheel(-100);
-					console.log(`distanceY: ${distanceY}, swipe up`);
 				}
 			}
 		}
 	}
 
 	const onTouchEnd = () => {
-		console.log(`touchStart: ${touchStart.y}, touchEnd: ${touchEnd.y}`);
 		setTouchEnd({}); // otherwise the swipe is fired even with usual touch events
 		setTouchStart({});
 		setStopped(true);
 	};
-
-	console.log(currentLevel);
 
 	const ref = useRef(null);
 
@@ -186,9 +176,6 @@ function AdiContainer() {
 			onTouchEnd={onTouchEnd}
 			ref={ref}
 			onWheel={(evt) => {
-				console.log(evt);
-				console.log(window);
-
 				if (!goDown) {
 					handleOnWheel(evt.deltaY);
 					currentLevel >= 2 && onScrollStop(() => setStopped(true));

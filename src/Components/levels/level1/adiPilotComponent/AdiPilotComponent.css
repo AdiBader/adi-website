@@ -41,13 +41,9 @@
 }
 
 .adiPilot .pilot .pilotImg.pilotDriverImg {
-	background-image: url(../../../../bgImages/adiDrivePilot.png);
 	height: 122px;
-	background-size: contain;
-	background-repeat: no-repeat;
 	left: 65px;
 	top: -66px;
-	animation: pilotFront1 2s ease 1.2s 1;
 	width: 100px;
 }
 .adiPilot .rope {
@@ -96,6 +92,10 @@
 	font-weight: 900;
 }
 
+.adiPilot .changingPicImg img {
+	width: 79%;
+}
+
 @keyframes adiDrivePilot {
 	0% {
 		left: 100vw;
@@ -103,15 +103,6 @@
 
 	100% {
 		left: 13.5vw;
-	}
-}
-@keyframes pilotFront1 {
-	0% {
-		background-image: url(../../../../bgImages/adiDrivePilotFront.png);
-	}
-
-	100% {
-		background-image: url(../../../../bgImages/adiDrivePilotFront.png);
 	}
 }
 

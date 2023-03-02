@@ -1,11 +1,11 @@
 .birds .bird {
 	height: 540px;
 	width: 50px;
-	background-position: top center;
+	/* background-position: top center;
 	background-size: 100%;
 	background-repeat: no-repeat;
-	background-image: url(../../../../bgImages/bird.png);
-	animation: animateBird 6.5s linear infinite, flyingBird 0.4s ease infinite;
+	background-image: url(../../../../bgImages/bird.png); */
+	animation: animateBird 6.5s linear infinite;
 	position: absolute;
 	right: -100px;
 	top: 2vh;
@@ -76,7 +76,7 @@
 		height: 64vw;
 		width: 8vw;
 
-		animation: animateBird2 6.5s linear infinite, flyingBird 0.4s ease infinite;
+		animation: animateBird2 6.5s linear infinite;
 		position: absolute;
 		right: -10vw;
 		top: 2vh;

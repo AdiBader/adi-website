@@ -52,12 +52,8 @@
 	right: 2%;
 }
 .tractorDiv .adiDriveT {
-	background-image: url(../../../../bgImages/adiDriveTside.png);
 	width: 21%;
 	height: 42%;
-	background-size: 100%;
-	background-repeat: no-repeat;
-	animation: tractorFront 3.5s none infinite;
 	position: absolute;
 	top: 9%;
 	left: 27%;

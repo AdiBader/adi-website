@@ -57,13 +57,9 @@ img.schoolLogo {
 	position: absolute;
 	width: 60px;
 	aspect-ratio: 1;
-	background-image: url('./../../../../bgImages/bird.png');
 	right: -48px;
 	top: -45px;
-	background-size: contain;
-	background-repeat: no-repeat;
 	rotate: -17deg;
-	animation: flyingBird 0.4s ease infinite;
 }
 .birdDiv2 {
 	rotate: 17deg;

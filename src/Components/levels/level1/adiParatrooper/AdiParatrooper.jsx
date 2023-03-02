@@ -1,6 +1,7 @@
 import './adiParatrooper.css';
 import { useState, useContext } from 'react';
 import PortfolioContext from '../../../../Context/PortfolioContext';
+import ChangingPic from '../../../ChangingPic';
 
 function AdiParatrooper() {
 	const [paratrooperClicked, setParatrooperClicked] = useState(false);
@@ -29,7 +30,14 @@ function AdiParatrooper() {
 						className='propelor'
 						alt='pilot'
 					/>
-					<div className='pilotImg pilotDriverImg' alt='pilot'></div>
+					<div className='pilotImg pilotDriverImg' alt='pilot'>
+						<ChangingPic
+							pic1={'./images/switching/adiDrivePilot.png'}
+							pic2={'./images/switching/adiDrivePilotFront.png'}
+							time={1750}
+							title={'Adi'}
+						/>
+					</div>
 				</div>
 				<div className='rope'></div>
 			</div>

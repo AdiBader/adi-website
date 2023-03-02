@@ -1,4 +1,5 @@
 import './AdiPilotComponent.css';
+import ChangingPic from '../../../ChangingPic';
 
 function AdiPilotComponent() {
 	return (
@@ -15,7 +16,14 @@ function AdiPilotComponent() {
 						className='propelor'
 						alt='pilot'
 					/>
-					<div className='pilotImg pilotDriverImg' alt='pilot'></div>
+					<div className='pilotImg pilotDriverImg' alt='pilot'>
+						<ChangingPic
+							pic1={'./images/switching/adiDrivePilot.png'}
+							pic2={'./images/switching/adiDrivePilotFront.png'}
+							time={1750}
+							title={'Adi'}
+						/>
+					</div>
 				</div>
 				<div className='rope'></div>
 			</div>

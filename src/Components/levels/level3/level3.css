@@ -101,3 +101,9 @@
 		top: 12vh;
 	}
 }
+
+@media screen and (max-width: 414px) {
+	.scrollDiv7 .level3 .tractorDiv {
+		left: 376vw;
+	}
+}
