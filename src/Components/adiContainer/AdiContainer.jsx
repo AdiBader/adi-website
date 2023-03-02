@@ -52,9 +52,6 @@ function AdiContainer() {
 		if (!goDown) {
 			if (!touchStart.x || !touchEnd.x) return;
 			const distanceX = touchStart.x - touchEnd.x;
-			const distanceXvw = Math.round(
-				(Math.abs(distanceX) * 100) / window.innerWidth / 5
-			);
 
 			const distanceY = touchStart.y - touchEnd.y;
 
