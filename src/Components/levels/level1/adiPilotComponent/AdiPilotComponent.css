@@ -94,6 +94,8 @@
 
 .adiPilot .changingPicImg img {
 	width: 79%;
+	position: absolute;
+	bottom: 0;
 }
 
 @keyframes adiDrivePilot {
@@ -272,5 +274,8 @@
 	}
 	.adiPilot .rope {
 		width: calc(100% - 130px);
+	}
+	.adiPilot .changingPicImg img {
+		bottom: 4px;
 	}
 }
