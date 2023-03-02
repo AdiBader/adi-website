@@ -99,6 +99,13 @@
 	text-align: center;
 	font-weight: 900;
 }
+.adiParatrooper .changingPicImg img {
+	width: auto;
+	height: 100%;
+}
+.adiParatrooper .changingPicImg {
+	height: 100%;
+}
 
 @keyframes adiDrivePilotParatrooper {
 	0% {
