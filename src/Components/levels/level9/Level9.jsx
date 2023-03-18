@@ -4,7 +4,6 @@ import './level9.css';
 import HeaderComponent from '../../headerComponent/HeaderComponent';
 import { FaGithub, FaLinkedinIn, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { Fireworks } from '@fireworks-js/react';
-import { isMobile } from 'react-device-detect';
 
 function Level9({ currentLevel }) {
 	const [finishFirework, setFinishFirework] = useState(false);
