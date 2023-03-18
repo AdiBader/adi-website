@@ -82,7 +82,7 @@ img.topCloud {
 }
 .scrollDown {
 	position: absolute;
-	z-index: 99999;
+	z-index: 9;
 	left: calc(50% - 100px);
 	margin: 0 auto;
 	text-align: center;
