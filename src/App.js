@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState, useEffect } from 'react';
 
 import MainComponent from './Components/MainComponent';
 

@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import PortfolioContext from '../../../Context/PortfolioContext';
 import './level1.css';
 import SunComponent from './sun/SunComponent';
@@ -7,6 +7,7 @@ import AdiPilotComponent from '../level1/adiPilotComponent/AdiPilotComponent';
 import Text1Component from './Text1Component';
 import AdiParatrooper from './adiParatrooper/AdiParatrooper';
 import { isMobile } from 'react-device-detect';
+import { BsMouse } from 'react-icons/bs';
 
 function Level1() {
 	const { currentLevel, pageYposition } = useContext(PortfolioContext);
@@ -24,6 +25,7 @@ function Level1() {
 		animatePilot.current = pageYposition <= -100 && true;
 		animateParatrooper.current = pageYposition <= -180 && true;
 	}
+
 	return (
 		<div className='level1'>
 			<div className={'bg-images ' + anim.current}>
@@ -40,6 +42,12 @@ function Level1() {
 				<div className='birds'>
 					<BirdsComponent />
 				</div>
+				{currentLevel === 0 && (
+					<div className='scrollDown'>
+						Scroll Down
+						<BsMouse />
+					</div>
+				)}
 				{animatePilot.current && <AdiPilotComponent />}
 
 				<Text1Component />

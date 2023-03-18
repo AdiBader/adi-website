@@ -22,8 +22,8 @@ function Level9({ currentLevel }) {
 		<div
 			className='level9'
 			style={{
-				height: `${isMobile ? window.innerHeight + 'px' : '100vh'}`,
-				top: `${isMobile && window.innerHeight + 'px'}`,
+				height: `${window.innerHeight + 'px'}`,
+				top: `${window.innerHeight + 'px'}`,
 			}}
 		>
 			{currentLevel === 9 && (

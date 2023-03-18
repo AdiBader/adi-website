@@ -11,7 +11,7 @@ function BirdsGraph() {
 		if (isMobile) {
 			return pageXposition < -350 && 'animatebirdsGraph';
 		} else {
-			return pageXposition < -225 && 'animatebirdsGraph';
+			return pageXposition < -210 && 'animatebirdsGraph';
 		}
 	}
 
