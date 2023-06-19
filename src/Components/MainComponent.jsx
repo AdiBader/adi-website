@@ -18,8 +18,8 @@ function MainComponent() {
 		noTransition,
 		goToContact,
 	} = useContext(PortfolioContext);
-	console.log(pageXposition);
-	console.log(pageYposition);
+	// console.log(pageXposition);
+	// console.log(pageYposition);
 
 	const ref = useRef(null);
 
